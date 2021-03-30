@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login } from "../../services/auth";
+import { useDispatch } from "react-redux";
+import * as sessionActions from "../../store/session";
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
-  const onLogin = async (e) => {
+  const onLogin = (e) => {
     e.preventDefault();
-    const user = await login(email, password);
+    const user = dispatch(sessionActions.loginUser({ email, password }));
+
     if (!user.errors) {
       setAuthenticated(true);
     } else {
       setErrors(user.errors);
     }
+  };
+
+  const onDemoLogin = () => {
+    setAuthenticated(true);
+    dispatch(sessionActions.demoLoginUser());
+    // dispatch(closeLogin());
   };
 
   const updateEmail = (e) => {
@@ -56,6 +65,9 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           onChange={updatePassword}
         />
         <button type="submit">Login</button>
+        <button type="button" onClick={onDemoLogin}>
+          Demo Login
+        </button>
       </div>
     </form>
   );
