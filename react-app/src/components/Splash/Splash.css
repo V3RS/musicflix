@@ -1,0 +1,10 @@
+.bg__container {
+}
+
+.splash__bg {
+  height: 743px;
+  width: 100vw;
+  object-fit: cover;
+  /* opacity: 0.96; */
+  /* shadow: 1; */
+}
