@@ -1,15 +1,18 @@
 import React from "react";
-import logo from "./bg.jpg";
+
+import SplashNav from "./SplashNav";
 
 import "./Splash.css";
 
 export default function Splash() {
   return (
     <div>
-      <div className="bg__container">
-        <img className="splash__bg" src={logo} alt="albums" />
+      <div className="sc">
+        <div className="sc2"></div>
+
+        <SplashNav />
+        <div className="splash__container"></div>
       </div>
-      <h1>test</h1>
     </div>
   );
 }
