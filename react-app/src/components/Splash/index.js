@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import SignupModal from "../SignupModal";
+import LoginModal from "../LoginModal";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -14,9 +15,7 @@ export default function Splash({ authenticated, setAuthenticated }) {
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.session.user);
-
-  if (user && !user.errors) return <Redirect to="/browse" />;
+  if (authenticated) return <Redirect to="/browse" />;
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -25,6 +24,12 @@ export default function Splash({ authenticated, setAuthenticated }) {
   return (
     <div className="s_c">
       <SignupModal
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+        email={email}
+        updateEmail={updateEmail}
+      />
+      <LoginModal
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
         email={email}

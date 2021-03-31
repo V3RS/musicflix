@@ -6,7 +6,12 @@ import LoginForm from "./LoginForm";
 
 Modal.setAppElement(document.getElementById("root"));
 
-const LoginModal = ({ authenticated, setAuthenticated }) => {
+const LoginModal = ({
+  authenticated,
+  setAuthenticated,
+  email,
+  updateEmail,
+}) => {
   const dispatch = useDispatch();
   const loginState = useSelector((state) => state.modal.loginShow);
 
@@ -25,6 +30,8 @@ const LoginModal = ({ authenticated, setAuthenticated }) => {
         <LoginForm
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}
+          email={email}
+          updateEmail={updateEmail}
         />
       </Modal>
     </>

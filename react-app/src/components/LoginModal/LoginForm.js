@@ -6,28 +6,27 @@ import * as sessionActions from "../../store/session";
 
 import "./LoginModal.css";
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+const LoginForm = ({ authenticated, setAuthenticated, email, updateEmail }) => {
   const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
   const emailInput = useRef();
   const pwInput = useRef();
 
-  const onLogin = async (e) => {
+  const onLogin = (e) => {
     e.preventDefault();
     setErrors([""]);
-    const user = await dispatch(sessionActions.loginUser({ email, password }));
+    const user = dispatch(sessionActions.loginUser({ email, password }));
     // const data = await user.json()
 
-    if (user.errors) {
-      setErrors(user.errors);
-    } else {
+    if (!user.errors) {
       setAuthenticated(true);
+      dispatch(closeLogin());
+    } else {
+      setErrors(user.errors);
     }
-
-    dispatch(closeLogin());
 
     // const user = await login(email, password);
     // if (!user.errors) {
@@ -36,15 +35,15 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     // }
   };
 
-  const onDemoLogin = async () => {
+  const onDemoLogin = () => {
     setAuthenticated(true);
-    await dispatch(sessionActions.demoLoginUser());
+    dispatch(sessionActions.demoLoginUser());
     dispatch(closeLogin());
   };
 
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
+  // const updateEmail = (e) => {
+  //   setEmail(e.target.value);
+  // };
 
   const updatePassword = (e) => {
     setPassword(e.target.value);
