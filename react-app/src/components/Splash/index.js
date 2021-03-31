@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import { Redirect } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 import SplashNav from "./SplashNav";
 
@@ -6,6 +9,10 @@ import "./Splash.css";
 
 export default function Splash() {
   const input = useRef();
+
+  const user = useSelector((state) => state.session.user);
+
+  if (user && !user.errors) return <Redirect to="/browse" />;
 
   return (
     <div className="s_c">

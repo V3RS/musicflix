@@ -40,7 +40,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
       <LoginModal
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
@@ -53,17 +52,8 @@ function App() {
         <Route path="/" exact={true}>
           <Splash />
         </Route>
-        <Route path="/login" exact={true}>
-          <LoginForm
-            authenticated={authenticated}
-            setAuthenticated={setAuthenticated}
-          />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm
-            authenticated={authenticated}
-            setAuthenticated={setAuthenticated}
-          />
+        <Route path="/browse" exact={true} authenticated={authenticated}>
+          <NavBar setAuthenticated={setAuthenticated} />
         </Route>
         <ProtectedRoute
           path="/users"

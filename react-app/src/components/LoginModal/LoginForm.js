@@ -51,7 +51,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/browse" />;
   }
 
   const closeModal = () => dispatch(closeLogin());
@@ -66,7 +66,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
       <button className="close__modal" onClick={closeModal}>
         <i className="fas fa-times"></i>
       </button>
-      <div id="login-title">Sign in</div>
+      <div id="login-title">Sign In</div>
       <form onSubmit={onLogin}>
         <div className="liform__container">
           <div className="login-input-container">

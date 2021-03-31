@@ -30,9 +30,11 @@
 }
 
 .splash__container {
-  position: absolute;
+  /* position: absolute;
   top: 30%;
-  left: 30%;
+  left: 30%; */
+  position: relative;
+  bottom: 70%;
   color: white;
   display: flex;
   flex-direction: column;
