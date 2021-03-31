@@ -9,6 +9,8 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import * as sessionActions from "./store/session";
+import LoginModal from "./components/LoginModal";
+import SignupModal from "./components/SignupModal";
 
 import Splash from "./components/Splash";
 
@@ -39,6 +41,14 @@ function App() {
   return (
     <BrowserRouter>
       {/* <NavBar setAuthenticated={setAuthenticated} /> */}
+      <LoginModal
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
+      <SignupModal
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
       <Switch>
         <Route path="/" exact={true}>
           <Splash />

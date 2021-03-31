@@ -13,3 +13,13 @@ body {
   padding: 0;
   /* background-color: #484848; */
 }
+
+input {
+  outline: none;
+}
+
+:root {
+  --green: #1db954;
+  --lightgreen: #1ed760;
+  --dark: #191414;
+}

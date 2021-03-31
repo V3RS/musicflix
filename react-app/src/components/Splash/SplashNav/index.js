@@ -1,11 +1,14 @@
 import React from "react";
 import logo from "./logo.png";
 import { useHistory } from "react-router-dom";
+import { openLogin } from "../../../store/modal";
+import { useDispatch } from "react-redux";
 
 import "./SplashNav.css";
 
 export default function SplashNav() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   return (
     <div className="splash__nav__container">
@@ -30,7 +33,12 @@ export default function SplashNav() {
           </button>
         </div>
         <div className="splash__nav__signin">
-          <button className="sn__signin__btn">Sign In</button>
+          <button
+            className="sn__signin__btn"
+            onClick={() => dispatch(openLogin())}
+          >
+            Sign In
+          </button>
         </div>
       </div>
     </div>
