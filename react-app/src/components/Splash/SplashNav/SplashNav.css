@@ -1,6 +1,6 @@
 .splash__logo__container {
-  width: 167px;
-  height: 45px;
+  width: 175px;
+  height: 50px;
   position: absolute;
   left: 3rem;
 }
@@ -31,6 +31,7 @@
 .splash__nav__github {
   position: absolute;
   right: 10rem;
+  color: white;
 }
 
 .splash__nav__signin {
@@ -47,6 +48,12 @@
   border-radius: 3px;
 }
 
+#ghatag {
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
 .sn__signin__btn {
   background-color: #1db954;
   width: 84px;
@@ -55,4 +62,8 @@
   color: white;
   border: none;
   border-radius: 3px;
+}
+
+#sn_git {
+  padding-right: 0.3rem;
 }

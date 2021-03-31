@@ -6,7 +6,7 @@ import "./Splash.css";
 
 export default function Splash() {
   return (
-    <div>
+    <div className="s_c">
       <div className="sc">
         <div className="sc2"></div>
 

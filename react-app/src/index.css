@@ -1,1 +1,15 @@
 /* TODO Add site wide styles */
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: #484848; */
+}

@@ -19,7 +19,15 @@ export default function SplashNav() {
           />
         </div>
         <div className="splash__nav__github">
-          <button className="splash__ghbtn">Github</button>
+          <button className="splash__ghbtn">
+            <a
+              id="ghatag"
+              href="https://github.com/V3RS/musicflix"
+              target="_blank"
+            >
+              <i id="sn_git" className="fab fa-github"></i>Github
+            </a>
+          </button>
         </div>
         <div className="splash__nav__signin">
           <button className="sn__signin__btn">Sign In</button>
