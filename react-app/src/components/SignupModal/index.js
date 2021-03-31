@@ -6,7 +6,12 @@ import SignUpForm from "./SignUpForm";
 
 Modal.setAppElement(document.getElementById("root"));
 
-const SignupModal = ({ authenticated, setAuthenticated }) => {
+const SignupModal = ({
+  authenticated,
+  setAuthenticated,
+  email,
+  updateEmail,
+}) => {
   const dispatch = useDispatch();
   const signupState = useSelector((state) => state.modal.signupShow);
 
@@ -25,6 +30,8 @@ const SignupModal = ({ authenticated, setAuthenticated }) => {
         <SignUpForm
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}
+          email={email}
+          updateEmail={updateEmail}
         />
       </Modal>
     </>

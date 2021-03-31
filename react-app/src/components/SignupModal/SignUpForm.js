@@ -7,9 +7,14 @@ import * as sessionActions from "../../store/session";
 
 import "./SignupModal.css";
 
-const SignUpForm = ({ authenticated, setAuthenticated }) => {
+const SignUpForm = ({
+  authenticated,
+  setAuthenticated,
+  email,
+  updateEmail,
+}) => {
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const dispatch = useDispatch();
@@ -41,9 +46,9 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
     setUsername(e.target.value);
   };
 
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
+  // const updateEmail = (e) => {
+  //   setEmail(e.target.value);
+  // };
 
   const updatePassword = (e) => {
     setPassword(e.target.value);
@@ -61,7 +66,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/browse" />;
   }
 
   return (
@@ -76,22 +81,6 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             <div className="su__in__c">
               <input
                 type="text"
-                name="username"
-                onChange={updateUsername}
-                value={username}
-                placeholder=" "
-                ref={unIn}
-                className="signup-inputs"
-                id="su__un__in"
-                required
-              ></input>
-              <span className="su__ph" onClick={() => unIn.current.focus()}>
-                Username
-              </span>
-            </div>
-            <div className="su__in__c">
-              <input
-                type="text"
                 name="email"
                 onChange={updateEmail}
                 value={email}
@@ -103,6 +92,22 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
               ></input>
               <span className="su__ph" onClick={() => emIn.current.focus()}>
                 Email
+              </span>
+            </div>
+            <div className="su__in__c">
+              <input
+                type="text"
+                name="username"
+                onChange={updateUsername}
+                value={username}
+                placeholder=" "
+                ref={unIn}
+                className="signup-inputs"
+                id="su__un__in"
+                required
+              ></input>
+              <span className="su__ph" onClick={() => unIn.current.focus()}>
+                Username
               </span>
             </div>
             <div className="su__in__c">

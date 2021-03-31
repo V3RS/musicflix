@@ -1,21 +1,35 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
+import SignupModal from "../SignupModal";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import SplashNav from "./SplashNav";
+import { openSignup } from "../../store/modal";
 
 import "./Splash.css";
 
-export default function Splash() {
+export default function Splash({ authenticated, setAuthenticated }) {
   const input = useRef();
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
 
   const user = useSelector((state) => state.session.user);
 
   if (user && !user.errors) return <Redirect to="/browse" />;
 
+  const updateEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
   return (
     <div className="s_c">
+      <SignupModal
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+        email={email}
+        updateEmail={updateEmail}
+      />
       <div className="sc">
         <div className="sc2"></div>
 
@@ -39,6 +53,8 @@ export default function Splash() {
                   type="email"
                   placeholder=" "
                   className="splash_input"
+                  onChange={updateEmail}
+                  value={email}
                   ref={input}
                 ></input>
                 <span
@@ -48,7 +64,10 @@ export default function Splash() {
                   Email address
                 </span>
               </div>
-              <button className="splash__gsbtn">
+              <button
+                className="splash__gsbtn"
+                onClick={() => dispatch(openSignup())}
+              >
                 Get Started<i id="gs__icon" className="fas fa-angle-right"></i>
               </button>
             </div>

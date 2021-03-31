@@ -50,7 +50,10 @@ function App() {
       />
       <Switch>
         <Route path="/" exact={true}>
-          <Splash />
+          <Splash
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}
+          />
         </Route>
         <Route path="/browse" exact={true} authenticated={authenticated}>
           <NavBar setAuthenticated={setAuthenticated} />
