@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../services/auth";
 import { openLogin, closeSignup } from "../../store/modal.js";
@@ -13,6 +13,11 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const dispatch = useDispatch();
+
+  const unIn = useRef();
+  const emIn = useRef();
+  const pwIn = useRef();
+  const cpwIn = useRef();
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -66,64 +71,91 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
       </button>
       <div id="signup-title">Sign Up</div>
       <form onSubmit={onSignUp}>
-        <div className="signup-inputs-container">
-          <div>
-            <input
-              type="text"
-              name="username"
-              onChange={updateUsername}
-              value={username}
-              placeholder="User Name"
-              className="signup-inputs"
-              required
-            ></input>
+        <div className="suform__c">
+          <div className="signup-inputs-container">
+            <div className="su__in__c">
+              <input
+                type="text"
+                name="username"
+                onChange={updateUsername}
+                value={username}
+                placeholder=" "
+                ref={unIn}
+                className="signup-inputs"
+                id="su__un__in"
+                required
+              ></input>
+              <span className="su__ph" onClick={() => unIn.current.focus()}>
+                Username
+              </span>
+            </div>
+            <div className="su__in__c">
+              <input
+                type="text"
+                name="email"
+                onChange={updateEmail}
+                value={email}
+                placeholder=" "
+                ref={emIn}
+                className="signup-inputs"
+                id="email_signup_input"
+                required
+              ></input>
+              <span className="su__ph" onClick={() => emIn.current.focus()}>
+                Email
+              </span>
+            </div>
+            <div className="su__in__c">
+              <input
+                type="password"
+                name="password"
+                onChange={updatePassword}
+                value={password}
+                placeholder=" "
+                ref={pwIn}
+                className="signup-inputs"
+                id="signup-pw-input"
+                required
+              ></input>
+              <span onClick={() => pwIn.current.focus()} className="su__ph">
+                Password
+              </span>
+            </div>
+            <div className="su__in__c">
+              <input
+                type="password"
+                name="repeat_password"
+                onChange={updateRepeatPassword}
+                value={repeatPassword}
+                required={true}
+                placeholder=" "
+                ref={cpwIn}
+                className="signup-inputs"
+                id="su__cpw__in"
+              ></input>
+              <span className="su__ph" onClick={() => cpwIn.current.focus()}>
+                Confirm Password
+              </span>
+            </div>
           </div>
-          <div>
-            <input
-              type="text"
-              name="email"
-              onChange={updateEmail}
-              value={email}
-              placeholder="Email"
-              className="signup-inputs"
-              required
-            ></input>
-          </div>
-          <div>
-            <input
-              type="password"
-              name="password"
-              onChange={updatePassword}
-              value={password}
-              placeholder="Password"
-              className="signup-inputs"
-              required
-            ></input>
-          </div>
-          <div>
-            <input
-              type="password"
-              name="repeat_password"
-              onChange={updateRepeatPassword}
-              value={repeatPassword}
-              required={true}
-              placeholder="Confirm Password"
-              className="signup-inputs"
-            ></input>
+          <button className="signupFormBtns" type="submit">
+            Sign Up
+          </button>
+          <div className="signup-or">
+            <div className="before-or"></div>
+            <div>or</div>
+            <div className="after-or"></div>
           </div>
         </div>
-        <button className="signupFormBtns" type="submit">
-          Sign Up
+        <button
+          type="button"
+          className="signupFormBtns"
+          id="demoBtn2"
+          onClick={onDemoLogin}
+        >
+          Demo Log in
         </button>
-        <div className="signup-or">
-          <div className="before-or"></div>
-          <div>or</div>
-          <div className="after-or"></div>
-        </div>
       </form>
-      <button className="signupFormBtns" id="demoBtn" onClick={onDemoLogin}>
-        Demo Log in
-      </button>
       <div className="signup__switch">
         Already have an account?
         <button onClick={onSwitch} className="signup_switch_btn">

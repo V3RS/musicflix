@@ -31,15 +31,14 @@
   padding-left: 15px;
   color: white;
   background-color: #333;
+  margin-top: 1rem;
 }
 
-#signup__pw__c,
-#signup__em__c {
+.su__in__c {
   position: relative;
 }
 
-#pw__signup__placeholder,
-#email__signup__placeholder {
+.su__ph {
   color: gray;
   position: absolute;
   top: 27%;
@@ -60,14 +59,21 @@
   transition: 0.2s ease;
 }
 
-#signup-pw-input {
-  margin-top: 1rem;
-  /* position: relative; */
-  /* border-top: none; */
-  /* bottom: 25px; */
+#su__un__in:focus + span,
+#su__un__in:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.6) translateY(-100%) translateX(-30px);
+  transition: 0.2s ease;
 }
 
-.close__modal {
+#su__cpw__in:focus + span,
+#su__cpw__in:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.6) translateY(-100%) translateX(-55px);
+  transition: 0.2s ease;
+}
+
+.close__modal__signup {
   position: absolute;
   top: 2%;
   left: 3%;
@@ -78,7 +84,7 @@
   background-color: rgb(10, 10, 10);
 }
 
-.close__modal:hover {
+.close__modal__signup:hover {
   background-color: rgb(40, 40, 40);
   /* background-color: rgb(10, 10, 10); */
 }
@@ -105,21 +111,21 @@
   color: #fff;
   background-color: var(--green);
   position: relative;
-  top: 150px;
+  top: 300px;
   border: none;
   font-weight: bold;
   /* bottom: 40px; */
 }
 
-#demoBtn {
+#demoBtn2 {
   background-color: gray;
   color: black;
   border: none;
   color: white;
   /* border: 2px solid gray; */
   font-size: 14px;
-  position: absolute;
-  top: 57%;
+  position: relative;
+  top: 40px;
 }
 
 #demoBtn:hover {
@@ -129,7 +135,7 @@
 .signup-or {
   margin: 1em auto;
   position: absolute;
-  top: 50.5%;
+  top: 113.5%;
   left: 48%;
   text-align: center;
   font-size: 14px;
@@ -164,7 +170,7 @@
   color: gray;
   font-size: 18px;
   position: absolute;
-  bottom: 28%;
+  bottom: 10%;
   left: 15%;
 }
 
@@ -186,16 +192,16 @@
   left: 170px;
 }
 
-.signup-input-container {
+.signup-inputs-container {
   box-sizing: border-box;
   border-radius: 5px;
   /* border: 1px solid #ccc; */
-  height: 114px;
+  height: 314px;
   padding: 0px;
   position: absolute;
 }
 
-.liform__container {
+.suform__c {
   position: relative;
   /* border: 1px solid red; */
   bottom: 40px;
