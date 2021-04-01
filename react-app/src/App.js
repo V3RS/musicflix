@@ -9,6 +9,7 @@ import { authenticate } from "./services/auth";
 import * as sessionActions from "./store/session";
 
 import Splash from "./components/Splash";
+import Browse from "./components/Browse";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           authenticated={authenticated}
         >
           <Nav setAuthenticated={setAuthenticated} />
+          <Browse />
         </ProtectedRoute>
         <ProtectedRoute
           path="/users"
@@ -63,9 +65,6 @@ function App() {
           authenticated={authenticated}
         >
           <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
