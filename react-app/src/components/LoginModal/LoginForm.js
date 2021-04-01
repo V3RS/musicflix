@@ -15,10 +15,10 @@ const LoginForm = ({ authenticated, setAuthenticated, email, updateEmail }) => {
   const emailInput = useRef();
   const pwInput = useRef();
 
-  const onLogin = (e) => {
+  const onLogin = async (e) => {
     e.preventDefault();
     setErrors([""]);
-    const user = dispatch(sessionActions.loginUser({ email, password }));
+    const user = await dispatch(sessionActions.loginUser({ email, password }));
     // const data = await user.json()
 
     if (!user.errors) {
