@@ -49,9 +49,7 @@ const LoginForm = ({ authenticated, setAuthenticated, email, updateEmail }) => {
     setPassword(e.target.value);
   };
 
-  if (authenticated) {
-    return <Redirect to="/browse" />;
-  }
+  if (authenticated) return <Redirect to="/browse" />;
 
   const closeModal = () => dispatch(closeLogin());
 

@@ -8,12 +8,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  /* background-color: #484848; */
-}
-
 input {
   outline: none;
 }
@@ -22,4 +16,10 @@ input {
   --green: #1db954;
   --lightgreen: #1ed760;
   --dark: #141414;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark);
 }

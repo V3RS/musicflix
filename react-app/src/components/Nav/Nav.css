@@ -11,6 +11,10 @@
   color: white;
 }
 
+.act {
+  color: white;
+}
+
 #list {
   padding-left: 1rem;
 }
@@ -22,9 +26,9 @@
 }
 
 .navlinks {
-  color: white;
+  color: red;
   position: absolute;
-  left: 14%;
+  left: 10%;
   top: 36%;
 }
 
@@ -33,6 +37,7 @@
   top: 0;
   left: 0;
   background-color: #141414;
+  box-shadow: 1px 1px 10px 1px black;
 }
 
 .nav {
@@ -49,4 +54,38 @@
 .nav__logout {
   position: absolute;
   right: 3rem;
+}
+
+#nav__icons__container {
+  position: absolute;
+  top: 17%;
+  right: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav__ghatag {
+  position: relative;
+  top: 7px;
+  right: 15px;
+  font-size: 24px;
+  color: white;
+}
+
+#nav__linktag {
+  position: relative;
+  top: 7px;
+  right: 45px;
+  font-size: 24px;
+  color: white;
+}
+
+.search {
+  position: relative;
+  top: 7px;
+  right: 75px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
 }

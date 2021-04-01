@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "./logo.png";
 import { useHistory } from "react-router-dom";
-import LogoutButton from "../auth/LogoutButton";
+// import LogoutButton from "../auth/LogoutButton";
+import DropDown from "./DropDown";
 
 import "./Nav.css";
 
 export default function Nav({ setAuthenticated }) {
   const history = useHistory();
-  const [navDD, setNavDD] = useState(false);
-  const toggleDD = () => setNavDD(true);
-  const toggleDDF = () => setNavDD(false);
+  // const [navDD, setNavDD] = useState(false);
+  // const toggleDD = () => setNavDD(true);
+  // const toggleDDF = () => setNavDD(false);
 
   return (
     <div className="nav__container">
@@ -24,29 +25,31 @@ export default function Nav({ setAuthenticated }) {
           />
         </div>
         <div className="navlinks">
-          <NavLink id="home" to="/browse">
+          <NavLink activeClassName="act" id="home" to="/browse">
             Home
           </NavLink>
-          <NavLink id="list" to="/profile/id/list">
+          <NavLink activeClassName="act" id="list" to="/profile/id/list">
             My List
           </NavLink>
         </div>
-        <div>
-          <button
-            onMouseEnter={toggleDD}
-            // onMouseLeave={toggleDDF}
-            onClick={toggleDD}
+        <div id="nav__icons__container">
+          <i className="search fas fa-search"></i>
+          <a
+            id="nav__linktag"
+            href="https://github.com/V3RS/musicflix"
+            target="_blank"
           >
-            hover
-          </button>
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            id="nav__ghatag"
+            href="https://github.com/V3RS/musicflix"
+            target="_blank"
+          >
+            <i id="sn_git" className="fab fa-github"></i>
+          </a>
+          <DropDown setAuthenticated={setAuthenticated} />
         </div>
-        {navDD && (
-          <div>
-            <div className="nav__logout">
-              <LogoutButton setAuthenticated={setAuthenticated} />
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
