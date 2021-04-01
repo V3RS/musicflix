@@ -1,69 +1,52 @@
-.splash__logo__container {
-  width: 175px;
-  height: 50px;
+.logo__container {
+  width: 93px;
+  height: 32px;
   position: absolute;
   left: 3rem;
+  top: 1rem;
 }
 
-#splash__logo {
+#home,
+#list {
+  color: white;
+}
+
+#list {
+  padding-left: 1rem;
+}
+
+#logo {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
 
-.splash__nav__container {
+.navlinks {
+  color: white;
+  position: absolute;
+  left: 14%;
+  top: 36%;
+}
+
+.nav__container {
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #141414;
 }
 
-.splash__nav {
+.nav {
   width: 100vw;
-  height: 100px;
+  height: 68px;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   /* background-color: linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); */
 }
 
-.splash__nav__github {
-  position: absolute;
-  right: 10rem;
-  color: white;
-}
-
-.splash__nav__signin {
+.nav__logout {
   position: absolute;
   right: 3rem;
-}
-.splash__ghbtn {
-  width: 97px;
-  height: 36px;
-  background: none;
-  color: white;
-  font-size: 1rem;
-  border: 1px solid white;
-  border-radius: 3px;
-}
-
-#ghatag {
-  color: white;
-  height: 100%;
-  width: 100%;
-}
-
-.sn__signin__btn {
-  background-color: #1db954;
-  width: 84px;
-  height: 32px;
-  font-size: 1rem;
-  color: white;
-  border: none;
-  border-radius: 3px;
-}
-
-#sn_git {
-  padding-right: 0.3rem;
 }
