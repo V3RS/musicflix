@@ -36,7 +36,7 @@ export default function Nav({ setAuthenticated }) {
           <i className="search fas fa-search"></i>
           <a
             id="nav__linktag"
-            href="https://github.com/V3RS/musicflix"
+            href="https://www.linkedin.com/in/veerkaran-singh-45b4a9190/"
             target="_blank"
           >
             <i class="fab fa-linkedin"></i>
