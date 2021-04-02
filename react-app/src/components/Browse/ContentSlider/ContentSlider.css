@@ -14,9 +14,10 @@
   bottom: 17.5rem;
   width: 60px;
   height: 267px;
-  font-size: 46px;
+  font-size: 36px;
   background: rgba(0, 0, 0, 0.2);
   border: none;
+  color: white;
 }
 
 #right {
