@@ -22,7 +22,7 @@ export default function Browse() {
         <div id="prev__video__info">
           <div id="prev__video__title__container">
             <h1>Earth</h1>
-            <h3 id="prev__vid__artist">LilDicky</h3>
+            <h3 id="prev__vid__artist">Lil Dicky</h3>
             {/* <p id="prev__vid__description">
               Written by: David Burd, Benjamin Levin, Magnus August Høiberg,
               Josh Coleman and Jamil Chammas Produced by: Benny Blanco...

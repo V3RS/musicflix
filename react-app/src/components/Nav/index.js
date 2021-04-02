@@ -36,6 +36,9 @@ export default function Nav({ setAuthenticated }) {
           <NavLink activeClassName="act" id="list" to="/profile/id/list">
             My List
           </NavLink>
+          <NavLink activeClassName="act" id="list" to="/creator">
+            Creator
+          </NavLink>
         </div>
         <div id="nav__icons__container">
           <i className="search fas fa-search"></i>
