@@ -39,6 +39,7 @@
   position: relative;
   top: 33rem;
   left: 5rem;
+  width: 100vw;
 }
 #prev__v__play,
 #prev__v__info {
@@ -59,7 +60,7 @@
 
 #prev__v__vol {
   position: absolute;
-  left: 100rem;
+  right: 15%;
   top: 15px;
   border-radius: 50%;
   width: 60px;
