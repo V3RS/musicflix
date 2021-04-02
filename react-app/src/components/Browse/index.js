@@ -14,6 +14,7 @@ export default function Browse() {
           height="108vh"
           playing={true}
           controls={false}
+          muted={true}
         />
       </div>
       <div className="sliders__c">
