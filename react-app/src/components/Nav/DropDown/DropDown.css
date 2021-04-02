@@ -1,0 +1,16 @@
+#menu {
+  color: white;
+  height: 32px;
+  /* width: 52px; */
+}
+
+#profile__img {
+  width: 32px;
+  height: 32px;
+}
+
+#propic {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}

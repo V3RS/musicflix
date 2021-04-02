@@ -1,10 +1,126 @@
 .bg__container {
 }
 
-.splash__bg {
-  height: 743px;
+.s_c {
+  background-color: black;
+  height: 100vh;
   width: 100vw;
-  object-fit: cover;
-  /* opacity: 0.96; */
-  /* shadow: 1; */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sc {
+  background: url("./bg.jpg");
+  height: 743px;
+  /* height: 100vh; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  border-bottom: 10px solid #333;
+  /* opacity: 0.5; */
+}
+
+.sc2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.splash__container {
+  /* position: absolute;
+  top: 30%;
+  left: 30%; */
+  position: relative;
+  bottom: 70%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash__title__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash__title {
+  text-align: center;
+  font-size: 4rem;
+  width: 800px;
+  font-weight: bold;
+}
+
+.splash__second__heading {
+  font-size: 1.625rem;
+  padding-top: 1rem;
+  font-weight: 400;
+}
+
+.splash__third__heading {
+  font-size: 1.2rem;
+  padding-top: 2rem;
+  font-weight: 400;
+}
+
+.splash__email__container {
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash_input {
+  width: 100%;
+  height: 90%;
+  font-size: 18px;
+  border: none;
+  /* border: 1px solid black; */
+  padding-left: 0.75rem;
+  position: absolute;
+  top: 5px;
+}
+
+.splash__gsbtn {
+  height: 70px;
+  font-size: 32px;
+  font-weight: bold;
+  width: 250px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  position: relative;
+}
+
+#gs__icon {
+  padding-left: 0.75rem;
+  position: relative;
+  top: 2px;
+}
+
+.s__email__c {
+  height: 70px;
+  width: 513px;
+  background-color: white;
+  position: relative;
+}
+
+#email__placeholder {
+  color: gray;
+  position: absolute;
+  top: 35%;
+  left: 2%;
+  font-size: 18px;
+}
+
+.splash_input:focus + span,
+.splash_input:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.85) translateY(-120%) translateX(-7px);
+  transition: 0.2s ease;
 }

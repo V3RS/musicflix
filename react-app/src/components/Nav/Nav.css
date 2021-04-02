@@ -1,0 +1,92 @@
+.logo__container {
+  width: 93px;
+  height: 32px;
+  position: absolute;
+  left: 3rem;
+  top: 1rem;
+}
+
+#home,
+#list {
+  color: white;
+}
+
+.act {
+  color: white;
+}
+
+#list {
+  padding-left: 1rem;
+}
+
+#logo {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.navlinks {
+  color: red;
+  position: absolute;
+  left: 10%;
+  top: 36%;
+}
+
+.nav__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #141414;
+  box-shadow: 1px 1px 10px 1px black;
+  z-index: 15;
+}
+
+.nav {
+  width: 100vw;
+  height: 68px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background-color: linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); */
+}
+
+.nav__logout {
+  position: absolute;
+  right: 3rem;
+}
+
+#nav__icons__container {
+  position: absolute;
+  top: 17%;
+  right: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav__ghatag {
+  position: relative;
+  top: 7px;
+  right: 15px;
+  font-size: 24px;
+  color: white;
+}
+
+#nav__linktag {
+  position: relative;
+  top: 7px;
+  right: 45px;
+  font-size: 24px;
+  color: white;
+}
+
+.search {
+  position: relative;
+  top: 7px;
+  right: 75px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}

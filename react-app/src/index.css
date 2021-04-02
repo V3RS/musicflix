@@ -1,1 +1,25 @@
 /* TODO Add site wide styles */
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+:root {
+  --green: #1db954;
+  --lightgreen: #1ed760;
+  --dark: #141414;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark);
+}

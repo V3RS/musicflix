@@ -1,0 +1,260 @@
+.signup-container {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* align-items: space-between; */
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+  width: 450px;
+  height: 660px;
+  border-radius: 1px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.signup-inputs {
+  display: flex;
+  justify-content: center;
+  /* position: relative;
+  bottom: 20px; */
+  font-size: 16px;
+  width: 315px;
+  height: 50px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  /* border: 1px solid #ccc; */
+  padding-top: 15px;
+  padding-left: 15px;
+  color: white;
+  background-color: #333;
+  margin-top: 1rem;
+}
+
+.su__in__c {
+  position: relative;
+}
+
+.su__ph {
+  color: gray;
+  position: absolute;
+  top: 27%;
+  left: 6%;
+}
+
+#email_signup_input:focus + span,
+#email_signup_input:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.6) translateY(-100%) translateX(-20px);
+  transition: 0.2s ease;
+}
+
+#signup-pw-input:focus + span,
+#signup-pw-input:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.6) translateY(-100%) translateX(-30px);
+  transition: 0.2s ease;
+}
+
+#su__un__in:focus + span,
+#su__un__in:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.6) translateY(-100%) translateX(-30px);
+  transition: 0.2s ease;
+}
+
+#su__cpw__in:focus + span,
+#su__cpw__in:not(:placeholder-shown) + span {
+  opacity: 1;
+  transform: scale(0.6) translateY(-100%) translateX(-55px);
+  transition: 0.2s ease;
+}
+
+.close__modal__signup {
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  font-size: 16px;
+  border: none;
+  border-radius: 50%;
+  color: gray;
+  background-color: rgb(10, 10, 10);
+}
+
+.close__modal__signup:hover {
+  background-color: rgb(40, 40, 40);
+  /* background-color: rgb(10, 10, 10); */
+}
+
+#signup-title {
+  display: flex;
+  position: absolute;
+  top: 10%;
+  left: 16%;
+  /* bottom: 40px; */
+  color: white;
+  font-size: 2.2rem;
+  font-weight: bold;
+  /* border: 1px solid red; */
+}
+
+.signupFormBtns {
+  font-size: 16px;
+  line-height: 18px;
+  padding: 10px 15px;
+  height: 50px;
+  width: 315px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--green);
+  position: relative;
+  top: 300px;
+  border: none;
+  font-weight: bold;
+  /* bottom: 40px; */
+}
+
+#demoBtn2 {
+  background-color: gray;
+  color: black;
+  border: none;
+  color: white;
+  /* border: 2px solid gray; */
+  font-size: 14px;
+  position: relative;
+  top: 40px;
+}
+
+#demoBtn:hover {
+  /* background-color: black; */
+}
+
+.signup-or {
+  margin: 1em auto;
+  position: absolute;
+  top: 113.5%;
+  left: 48%;
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+  /* font-weight: 800; */
+}
+
+.before-or {
+  display: inline-block;
+  position: relative;
+  right: 30px;
+  width: 130px;
+  top: 100px;
+  border-top: 1px solid lightgray;
+  content: " ";
+  position: absolute;
+  top: 0.7em;
+}
+.after-or {
+  display: inline-block;
+  position: relative;
+  left: 30px;
+  width: 130px;
+  top: 100px;
+  border-top: 1px solid lightgray;
+  content: " ";
+  position: absolute;
+  top: 0.7em;
+}
+
+.signup__switch {
+  color: gray;
+  font-size: 18px;
+  position: absolute;
+  bottom: 10%;
+  left: 15%;
+}
+
+.signup_switch_btn {
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: white;
+  /* text-decoration: underline; */
+  /* color: white; */
+}
+
+.signup__errors {
+  font-size: 14px;
+  color: orange;
+  position: relative;
+  left: 170px;
+}
+
+.signup-inputs-container {
+  box-sizing: border-box;
+  border-radius: 5px;
+  /* border: 1px solid #ccc; */
+  height: 314px;
+  padding: 0px;
+  position: absolute;
+}
+
+.suform__c {
+  position: relative;
+  /* border: 1px solid red; */
+  bottom: 40px;
+  height: 300px;
+}
+
+/* modal css */
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 200ms ease-in-out;
+  z-index: 15;
+}
+
+.ReactModal__Overlay--after-open {
+  /* background-color: hsla(0, 0%, 94.9%, 0.9); */
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateY(100px);
+  /* transform: translateY(100px); */
+  /* transition: all 500ms ease-in-out; */
+}
+
+.OuterModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  border: none;
+}
+
+.InnerModal {
+  text-decoration: none;
+  height: 100%;
+  background: transparent;
+  height: fit-content;
+  position: fixed;
+  top: 5%;
+  /* border-radius: 1px; */
+  /* position: fixed; */
+}
+
+.InnerModal:focus {
+  outline: 0;
+}
