@@ -1,0 +1,13 @@
+.album__container {
+  height: 267px;
+  width: 267px;
+  margin-left: 0.25rem;
+  position: relative;
+  /* right: 100px; */
+  /* top: 55px; */
+}
+
+.album {
+  height: 100%;
+  width: 100%;
+}

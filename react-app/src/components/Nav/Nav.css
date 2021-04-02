@@ -33,11 +33,12 @@
 }
 
 .nav__container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #141414;
   box-shadow: 1px 1px 10px 1px black;
+  z-index: 15;
 }
 
 .nav {

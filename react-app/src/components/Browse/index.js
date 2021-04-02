@@ -1,6 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player/youtube";
-import Slider from "./Sliders";
+import ContentSlider from "./ContentSlider";
+import "./Browse.css";
 
 export default function Browse() {
   return (
@@ -16,7 +17,16 @@ export default function Browse() {
         />
       </div>
       <div className="sliders__c">
-        <Slider />
+        <ContentSlider />
+      </div>
+      <div className="sliders__c">
+        <ContentSlider />
+      </div>
+      <div className="sliders__c">
+        <ContentSlider />
+      </div>
+      <div className="sliders__c">
+        <ContentSlider />
       </div>
     </div>
   );
