@@ -13,7 +13,7 @@ import VideoSlide from "../../VideoSlide";
 
 export default function ContentSlider() {
   return (
-    <div>
+    <div className="whole__slider__c">
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={15}
