@@ -90,3 +90,7 @@
   color: white;
   cursor: pointer;
 }
+
+.nav__scroll {
+  background: transparent;
+}

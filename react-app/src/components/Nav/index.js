@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "./logo.png";
 import { useHistory } from "react-router-dom";
@@ -12,9 +12,14 @@ export default function Nav({ setAuthenticated }) {
   // const [navDD, setNavDD] = useState(false);
   // const toggleDD = () => setNavDD(true);
   // const toggleDDF = () => setNavDD(false);
+  const nav = useRef();
+
+  // if (window.scrollTop() === 0) {
+  //   nav.current.classList.add("nav__scroll");
+  // }
 
   return (
-    <div className="nav__container">
+    <div ref={nav} className="nav__container">
       <div className="nav">
         <div className="logo__container">
           <img

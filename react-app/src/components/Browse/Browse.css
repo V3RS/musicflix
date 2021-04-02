@@ -19,7 +19,7 @@
 #prev__video__title__container {
   color: white;
   position: absolute;
-  top: 15%;
+  top: 205%;
   left: 5%;
   font-size: 75px;
   /* font-size: 40rem; */
@@ -27,7 +27,7 @@
 
 #prev__vid__artist {
   position: absolute;
-  top: 35%;
+  top: 50%;
 }
 
 #prev__vid__description {
@@ -55,6 +55,23 @@
   color: white;
   background-color: rgb(87, 87, 87);
   border: none;
+}
+
+#prev__v__vol {
+  position: absolute;
+  left: 100rem;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid white;
+}
+
+#prev__v__vol:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .ic {

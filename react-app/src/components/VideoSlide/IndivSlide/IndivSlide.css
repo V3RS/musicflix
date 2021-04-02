@@ -4,7 +4,6 @@
   position: relative;
   /* right: 100px; */
   height: 400px;
-  width: 400px;
   /* top: 55px; */
 }
 
@@ -14,8 +13,11 @@
   cursor: pointer;
 }
 
+.album__container:hover {
+  z-index: 10;
+}
+
 .album:hover {
-  z-index: 15;
   transition: transform 0.3s ease-in-out;
   transform: scale3d(1.15, 1.15, 1.15);
 }
