@@ -9,24 +9,24 @@ export default function Browse() {
       <div className="preview__video__container">
         <ReactPlayer
           className="react-player"
-          url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+          url="https://www.youtube.com/watch?v=pvuN_WvF1to&ab_channel=LilDicky"
           width="100vw"
-          height="100vh"
+          height="108vh"
           playing={true}
           controls={false}
         />
       </div>
       <div className="sliders__c">
-        <ContentSlider />
+        <ContentSlider title={"Trending Now"} />
       </div>
       <div className="sliders__c">
-        <ContentSlider />
+        <ContentSlider title={"Jazz"} />
       </div>
       <div className="sliders__c">
-        <ContentSlider />
+        <ContentSlider title={"Rap"} />
       </div>
       <div className="sliders__c">
-        <ContentSlider />
+        <ContentSlider title={"Pop"} />
       </div>
     </div>
   );

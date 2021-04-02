@@ -1,13 +1,21 @@
 .album__container {
-  height: 267px;
-  width: 267px;
   margin-left: 0.25rem;
   position: relative;
   /* right: 100px; */
+  height: 400px;
+  width: 400px;
   /* top: 55px; */
 }
 
 .album {
-  height: 100%;
-  width: 100%;
+  height: 267px;
+  width: 267px;
+  cursor: pointer;
+}
+
+.album:hover {
+  z-index: 15;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.15);
+  overflow: visible;
 }

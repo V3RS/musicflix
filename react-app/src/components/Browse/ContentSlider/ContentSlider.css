@@ -4,4 +4,33 @@
 
 .whole__slider__c {
   background: transparent;
+  margin-left: 2rem;
+}
+
+#left,
+#right {
+  /* color: red; */
+  position: relative;
+  bottom: 17.5rem;
+  width: 60px;
+  height: 267px;
+  font-size: 46px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+#right {
+  left: 109.5rem;
+}
+.slide_btns {
+  display: none;
+}
+
+.carousel {
+  height: 375px;
+}
+
+.carousel:hover > div,
+.carousel > div:hover {
+  display: block;
 }
