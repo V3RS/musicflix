@@ -11,7 +11,7 @@
 #right {
   /* color: red; */
   position: relative;
-  bottom: 17.5rem;
+  bottom: 30rem;
   width: 60px;
   height: 267px;
   font-size: 36px;
@@ -34,4 +34,9 @@
 .carousel:hover > div,
 .carousel > div:hover {
   display: block;
+}
+
+/* mess with this height for on hover effect to make sure it is not getting cut off */
+.carousel > div {
+  height: 500px;
 }

@@ -8,4 +8,81 @@
 }
 
 .preview__video__container {
+  position: relative;
+}
+
+#prev__video__info {
+  position: relative;
+  bottom: 55rem;
+}
+
+#prev__video__title__container {
+  color: white;
+  position: absolute;
+  top: 205%;
+  left: 5%;
+  font-size: 75px;
+  /* font-size: 40rem; */
+}
+
+#prev__vid__artist {
+  position: absolute;
+  top: 50%;
+}
+
+#prev__vid__description {
+  font-size: 30px;
+  width: 700px;
+}
+
+#prev__video__btns {
+  position: relative;
+  top: 33rem;
+  left: 5rem;
+  width: 100vw;
+}
+#prev__v__play,
+#prev__v__info {
+  height: 58px;
+  width: 150px;
+  border-radius: 4px;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: black;
+}
+
+#prev__v__play:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+#prev__v__info {
+  width: 200px;
+  color: white;
+  background-color: rgba(87, 87, 87, 0.85);
+  border: none;
+}
+
+#prev__v__info:hover {
+  background-color: rgba(87, 87, 87, 0.75);
+}
+
+#prev__v__vol {
+  position: absolute;
+  right: 11%;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid white;
+}
+
+#prev__v__vol:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ic {
+  margin-right: 1rem;
 }
