@@ -11,7 +11,7 @@ import "./ContentSlider.css";
 
 import VideoSlide from "../../VideoSlide";
 
-export default function ContentSlider() {
+export default function ContentSlider({ title }) {
   return (
     <div className="whole__slider__c">
       <CarouselProvider
@@ -19,7 +19,7 @@ export default function ContentSlider() {
         naturalSlideHeight={15}
         totalSlides={3}
       >
-        <h1 id="slider__title">Trending Now</h1>
+        <h1 id="slider__title">{title}</h1>
         <Slider>
           <Slide index={0}>
             <VideoSlide />
@@ -31,12 +31,14 @@ export default function ContentSlider() {
             <VideoSlide />
           </Slide>
         </Slider>
-        <ButtonBack id="left">
-          <i className="fas fa-angle-left fa-2x"></i>
-        </ButtonBack>
-        <ButtonNext id="right">
-          <i className="fas fa-angle-right fa-2x"></i>
-        </ButtonNext>
+        <div className="slide_btns">
+          <ButtonBack id="left">
+            <i className="fas fa-angle-left fa-2x"></i>
+          </ButtonBack>
+          <ButtonNext id="right">
+            <i className="fas fa-angle-right fa-2x"></i>
+          </ButtonNext>
+        </div>
       </CarouselProvider>
     </div>
   );
