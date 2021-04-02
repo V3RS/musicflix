@@ -1,5 +1,5 @@
 import React from "react";
-import IndivSlide from "./IndivSlide";
+import IndivSlide from "../IndivSlide";
 import "./VideoSlide.css";
 
 export default function VideoSlide() {

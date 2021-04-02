@@ -1,0 +1,10 @@
+.hover__slide__c {
+  position: relative;
+  bottom: 100px;
+  z-index: 200;
+  background-color: red;
+  cursor: pointer;
+}
+
+.h__slide__c {
+}
