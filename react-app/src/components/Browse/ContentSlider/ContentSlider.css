@@ -31,6 +31,10 @@
   height: 375px;
 }
 
+.carousel:hover {
+  z-index: 10;
+}
+
 .carousel:hover > div,
 .carousel > div:hover {
   display: block;

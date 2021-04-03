@@ -12,12 +12,23 @@
   width: 267px;
   cursor: pointer;
 }
+.hover__c {
+  width: 400px;
+  height: 400px;
+  background-color: #141414;
+  box-shadow: 1px 1px 5px 1px black;
+  border-radius: 4px;
+  position: relative;
+  bottom: 80px;
+}
 
-.album__container:hover {
+.hover__c:hover {
   z-index: 10;
+  cursor: pointer;
+  width: 400px;
 }
 
 .album:hover {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   transform: scale3d(1.15, 1.15, 1.15);
 }

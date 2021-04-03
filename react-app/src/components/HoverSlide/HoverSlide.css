@@ -1,0 +1,88 @@
+.hover__slide__c {
+  /* position: relative; */
+  /* bottom: 150px; */
+  /* z-index: 200; */
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+.react-player2 {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.hover__slide__c:hover {
+  cursor: pointer;
+}
+
+/* .hover__slide__c:hover {
+  z-index: 200;
+} */
+
+.hover__info {
+  position: relative;
+}
+
+#hover__title {
+  position: absolute;
+  top: 30px;
+  margin-left: 1rem;
+}
+
+#hover__artist {
+  position: absolute;
+  top: 70px;
+  margin-left: 1rem;
+}
+
+#hover__mute {
+  position: absolute;
+  bottom: 20px;
+  right: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: gray;
+  background: transparent;
+  border: 1px solid gray;
+}
+
+#hover__mute:hover,
+#hover__play:hover,
+#hover__add:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#hover__play,
+#hover__add,
+#hover__info {
+  position: absolute;
+  top: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  background: transparent;
+  border: 1px solid gray;
+}
+
+#hover__play {
+  margin-left: 1rem;
+  background: white;
+  color: black;
+}
+
+#hover__add {
+  margin-left: 3.5rem;
+}
+#hover__info {
+  right: 15px;
+  font-size: 30px;
+  color: gray;
+  border: none;
+  top: 8px;
+}
+
+#hover__info:hover {
+  color: rgba(255, 255, 255, 0.2);
+}
