@@ -8,10 +8,10 @@ class MusicVideo(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, nullable=False)
     title = db.Column(db.String(255), nullable=False)
-    description = db.Column(db.Text, nullable=False)
+    artist = db.Column(db.String, nullable=False)
+    genre = db.Column(db.String, nullable=False)
     coverart = db.Column(db.String, nullable=False)
     video_url = db.Column(db.String, nullable=False)
-    year = db.Column(db.Integer, nullable=False)
 
     reviews = relationship("Review", back_populates='music_video')
 
@@ -20,9 +20,9 @@ class MusicVideo(db.Model):
         return {
             "id": self.id,
             "title": self.title,
-            "description": self.description,
+            "genre": self.genre,
             "coverart": self.coverart,
             "video_url": self.video_url,
-            "year": self.year,
+            "artist": self.artist,
             "reviews": self.reviews
         }
