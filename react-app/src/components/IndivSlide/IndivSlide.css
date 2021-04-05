@@ -11,6 +11,7 @@
   height: 267px;
   width: 267px;
   cursor: pointer;
+  border-radius: 4px;
 }
 .hover__c {
   width: 400px;

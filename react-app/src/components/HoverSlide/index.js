@@ -12,7 +12,7 @@ export default function HoverSlide({ mv }) {
         <div className="hover__vid__c">
           <ReactPlayer
             className="react-player2"
-            url={mv.video_url}
+            url={mv?.video_url}
             width="350px"
             height="270px"
             playing={true}
@@ -22,8 +22,8 @@ export default function HoverSlide({ mv }) {
           />
         </div>
         <div className="hover__info">
-          <h1 id="hover__title">{mv.title}</h1>
-          <h3 id="hover__artist">{mv.artist}</h3>
+          <h1 id="hover__title">{mv?.title}</h1>
+          <h3 id="hover__artist">{mv?.artist}</h3>
           <button id="hover__mute" onClick={() => setMute(!mute)}>
             {mute ? (
               <i className="fas fa-volume-mute"></i>

@@ -98,7 +98,7 @@ export default function DropDown({ setAuthenticated }) {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>Meet The Dev</MenuItem>
                     <MenuItem onClick={handleClose}>
                       <LogoutButton setAuthenticated={setAuthenticated} />
                     </MenuItem>
