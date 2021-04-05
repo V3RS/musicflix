@@ -20,3 +20,9 @@ def get_mvs():
     data["rap"] = rap
     data["rock"] = rock
     return data
+
+
+@mv_routes.route('/<int:id>')
+def get_mv(id):
+    mv = MusicVideo.query.get(id)
+    return mv.to_dict()

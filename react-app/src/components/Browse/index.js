@@ -4,13 +4,20 @@ import ReactPlayer from "react-player/youtube";
 import ContentSlider from "./ContentSlider";
 import { getMusicVideos } from "../../store/mv";
 import "./Browse.css";
+import MVModal from "../MVModal";
+import { openMV } from "../../store/modal";
 
 export default function Browse() {
   const [mute, setMute] = useState(true);
+  const [num, setNum] = useState(0);
+  const [trending, setTrending] = useState([]);
   const dispatch = useDispatch();
+  const getRandomInt = (max) => Math.floor(Math.random() * max);
   useEffect(() => {
     dispatch(getMusicVideos());
+    setNum(getRandomInt(64));
   }, [dispatch]);
+  // trending
 
   const mv = useSelector((state) => state.mv);
   const all = mv.all;
@@ -18,11 +25,18 @@ export default function Browse() {
   const rap = mv.rap;
   const rock = mv.rock;
 
-  const getRandomInt = (max) => Math.floor(Math.random() * max);
-  const num = getRandomInt(62);
+  // trend will be changed when a like system exists for now it will be randomized
+  useEffect(() => {
+    const trend = new Array();
+    for (let i = 0; i < 21; i++) {
+      trend.push(all ? all[getRandomInt(64)] : {});
+    }
+    setTrending(trend);
+  }, [mv]);
 
   return (
     <div className="browse__container">
+      <MVModal mv={all ? all[num] : {}} />
       <div className="preview__video__container">
         <ReactPlayer
           className="react-player"
@@ -44,9 +58,10 @@ export default function Browse() {
           </div>
           <div id="prev__video__btns">
             <button id="prev__v__play">
-              <i className="ic fas fa-play"></i>Play
+              <i className="ic fas fa-play"></i>
+              Play
             </button>
-            <button id="prev__v__info">
+            <button id="prev__v__info" onClick={() => dispatch(openMV())}>
               <i className="ic fas fa-info-circle"></i>More Info
             </button>
             <button id="prev__v__vol" onClick={() => setMute(!mute)}>
@@ -56,13 +71,19 @@ export default function Browse() {
                 <i className="fas fa-volume-up"></i>
               )}
             </button>
+            <button
+              id="prev__v__shuffle"
+              onClick={() => setNum(getRandomInt(62))}
+            >
+              <i className="fas fa-random"></i>
+            </button>
           </div>
         </div>
       </div>
       {mv && (
         <>
           <div className="sliders__c">
-            <ContentSlider title={"Trending Now"} mvs={rap} />
+            <ContentSlider title={"Trending Now"} mvs={trending} />
           </div>
           <div className="sliders__c">
             <ContentSlider title={"Pop"} mvs={pop} />

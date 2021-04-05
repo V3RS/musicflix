@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.react-player {
+  box-shadow: 1px 1px 10px 1px #161616;
+}
+
 .sliders__c {
   position: relative;
   bottom: 15rem;
@@ -19,14 +23,15 @@
 #prev__video__title__container {
   color: white;
   position: absolute;
-  top: 205%;
+  top: 405%;
   left: 5%;
-  font-size: 75px;
+  font-size: 50px;
   /* font-size: 40rem; */
 }
 
 #prev__vid__artist {
   position: absolute;
+  width: 1000px;
   top: 50%;
 }
 
@@ -37,7 +42,7 @@
 
 #prev__video__btns {
   position: relative;
-  top: 33rem;
+  top: 32rem;
   left: 5rem;
   width: 100vw;
 }
@@ -80,6 +85,23 @@
 }
 
 #prev__v__vol:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#prev__v__shuffle {
+  position: absolute;
+  right: 6%;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid white;
+}
+
+#prev__v__shuffle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 

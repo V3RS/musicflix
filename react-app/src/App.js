@@ -10,6 +10,7 @@ import * as sessionActions from "./store/session";
 
 import Splash from "./components/Splash";
 import Browse from "./components/Browse";
+import MusicVideoPage from "./components/MusicVideoPage";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -18,18 +19,15 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setLoaded(true));
-  }, [dispatch]);
-
-  useEffect(() => {
     (async () => {
+      dispatch(sessionActions.restoreUser());
       const user = await authenticate();
       if (!user.errors) {
         setAuthenticated(true);
       }
       setLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!loaded) {
     return null;
@@ -51,6 +49,14 @@ function App() {
         >
           <Nav setAuthenticated={setAuthenticated} />
           <Browse />
+        </ProtectedRoute>
+        <ProtectedRoute
+          path="/mv/:mvId"
+          exact={true}
+          // authenticated={authenticated}
+        >
+          <Nav setAuthenticated={setAuthenticated} />
+          <MusicVideoPage />
         </ProtectedRoute>
         <ProtectedRoute
           path="/users"

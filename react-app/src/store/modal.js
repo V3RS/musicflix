@@ -2,6 +2,8 @@ const MODAL_OPEN_LOGIN = "loginModal/open";
 const MODAL_CLOSE_LOGIN = "loginModal/close";
 const MODAL_OPEN_SIGNUP = "signupModal/open";
 const MODAL_CLOSE_SIGNUP = "signupModal/close";
+const MODAL_OPEN_MV = "mvModal/open";
+const MODAL_CLOSE_MV = "mvModal/close";
 
 export const openLogin = () => {
   return {
@@ -27,9 +29,22 @@ export const closeSignup = () => {
   };
 };
 
+export const openMV = () => {
+  return {
+    type: MODAL_OPEN_MV,
+  };
+};
+
+export const closeMV = () => {
+  return {
+    type: MODAL_CLOSE_MV,
+  };
+};
+
 const initialState = {
   loginShow: false,
   signupShow: false,
+  mvShow: false,
 };
 
 const modalReducer = (state = initialState, action) => {
@@ -46,6 +61,12 @@ const modalReducer = (state = initialState, action) => {
       return newState;
     case MODAL_CLOSE_SIGNUP:
       newState = Object.assign({}, state, { signupShow: false });
+      return newState;
+    case MODAL_OPEN_MV:
+      newState = Object.assign({}, state, { mvShow: true });
+      return newState;
+    case MODAL_CLOSE_MV:
+      newState = Object.assign({}, state, { mvShow: false });
       return newState;
     default:
       return state;

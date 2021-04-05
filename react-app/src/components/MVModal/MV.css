@@ -1,0 +1,28 @@
+.OuterModalMV {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  border: none;
+}
+
+.InnerModalMV {
+  text-decoration: none;
+  height: 100%;
+  background: transparent;
+  height: fit-content;
+  position: fixed;
+  top: 50%;
+  /* border-radius: 1px; */
+  /* position: fixed; */
+}
+
+.InnerModal:focus {
+  outline: none;
+}
