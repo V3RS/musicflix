@@ -20,7 +20,7 @@ export default function IndivSlide({ mv }) {
           className="hover__c album"
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
-          onClick={open}
+          // onClick={open}
         >
           <HoverSlide hover={hover} setHover={setHover} mv={mv} />
         </div>
@@ -39,7 +39,6 @@ export default function IndivSlide({ mv }) {
           />
         </div>
       )}
-      ;
     </>
   );
 }
