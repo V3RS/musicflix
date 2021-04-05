@@ -3,7 +3,7 @@ import ReactPlayer from "react-player/youtube";
 
 import "./HoverSlide.css";
 
-export default function HoverSlide() {
+export default function HoverSlide({ mv }) {
   const [mute, setMute] = useState(true);
 
   return (
@@ -12,7 +12,7 @@ export default function HoverSlide() {
         <div className="hover__vid__c">
           <ReactPlayer
             className="react-player2"
-            url="https://www.youtube.com/watch?v=0NChtZCDCsY&ab_channel=KhalidVEVO"
+            url={mv.video_url}
             width="350px"
             height="270px"
             playing={true}
@@ -22,8 +22,8 @@ export default function HoverSlide() {
           />
         </div>
         <div className="hover__info">
-          <h1 id="hover__title">Title of music video</h1>
-          <h3 id="hover__artist">Artist of music video</h3>
+          <h1 id="hover__title">{mv.title}</h1>
+          <h3 id="hover__artist">{mv.artist}</h3>
           <button id="hover__mute" onClick={() => setMute(!mute)}>
             {mute ? (
               <i className="fas fa-volume-mute"></i>

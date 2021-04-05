@@ -11,7 +11,7 @@ import "./ContentSlider.css";
 
 import VideoSlide from "../../VideoSlide";
 
-export default function ContentSlider({ title }) {
+export default function ContentSlider({ title, mvs }) {
   return (
     <div className="whole__slider__c">
       <CarouselProvider
@@ -22,13 +22,13 @@ export default function ContentSlider({ title }) {
         <h1 id="slider__title">{title}</h1>
         <Slider>
           <Slide index={0}>
-            <VideoSlide />
+            <VideoSlide mvs={mvs?.slice(0, 7)} />
           </Slide>
           <Slide index={1}>
-            <VideoSlide />
+            <VideoSlide mvs={mvs?.slice(7, 14)} />
           </Slide>
           <Slide index={2}>
-            <VideoSlide />
+            <VideoSlide mvs={mvs?.slice(14, 21)} />
           </Slide>
         </Slider>
         <div className="slide_btns">
