@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ReactPlayer from "react-player/youtube";
 import MVModal from "../MVModal";
 import { openMV } from "../../store/modal";
+import { setFocusId } from "../../store/mv";
 import "./MusicVideoPage.css";
 
 export default function MusicVideoPage() {
@@ -15,6 +16,7 @@ export default function MusicVideoPage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
+  const mvState = useSelector((state) => state.modal.mvShow);
 
   const { mvId } = useParams();
   useEffect(() => {
@@ -36,19 +38,20 @@ export default function MusicVideoPage() {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
+      <MVModal />
       <div className="preview__video__container">
         <ReactPlayer
           className="react-player"
           url={mv?.video_url}
           width="100vw"
           height="100vh"
-          playing={play}
+          playing={play && !mvState ? true : false}
           controls={true}
           muted={mute}
           loop={true}
         />
         {hover && (
-          <div id="modal__video__info">
+          <div id="mv__video__information">
             <button id="back" onClick={() => history.push("/browse")}>
               <i className="fas fa-arrow-left"></i>
             </button>
@@ -65,7 +68,13 @@ export default function MusicVideoPage() {
                 )}
                 {play ? "Pause" : "Play"}
               </button>
-              <button id="prev__v__info" onClick={() => dispatch(openMV())}>
+              <button
+                id="prev__v__info"
+                onClick={() => {
+                  dispatch(setFocusId(mv?.id));
+                  dispatch(openMV());
+                }}
+              >
                 <i className="ic fas fa-info-circle"></i>More Info
               </button>
               <button id="prev__v__vol" onClick={() => setMute(!mute)}>
