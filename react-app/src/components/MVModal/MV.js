@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { closeMV } from "../../store/modal";
 import "./MV.css";
 
 export default function MV({ mv }) {
   const [mute, setMute] = useState(true);
+  const dispatch = useDispatch();
+  const history = useHistory();
   return (
     <div id="modal__mv__c">
+      <button className="mv__close__modal" onClick={() => dispatch(closeMV())}>
+        <i className="fas fa-times"></i>
+      </button>
       <ReactPlayer
         className="react-player"
         url={mv?.video_url}
@@ -24,7 +32,10 @@ export default function MV({ mv }) {
         <div id="modal__video__btns">
           <button
             id="modal__v__play"
-            // onClick={() => history.push(`/mv/2`)}
+            onClick={() => {
+              history.push(`/mv/${mv?.id}`);
+              dispatch(closeMV());
+            }}
           >
             <i className="ic fas fa-play"></i>
             Play

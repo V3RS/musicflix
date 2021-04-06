@@ -115,3 +115,18 @@
   position: absolute;
   right: 5%;
 }
+
+.mv__close__modal {
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  background: #141414;
+  border: none;
+  border-radius: 50%;
+  right: 1%;
+  top: 1%;
+}
+
+.mv__close__modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

@@ -9,7 +9,7 @@ import "./MusicVideoPage.css";
 
 export default function MusicVideoPage() {
   const [mv, setMV] = useState({});
-  const [mute, setMute] = useState(true);
+  const [mute, setMute] = useState(false);
   const [play, setPlay] = useState(true);
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
