@@ -15,6 +15,11 @@
   border-radius: 3px;
 }
 
+#drop_down_icon {
+  position: relative;
+  top: 4px;
+}
+
 #menu-list-grow {
   color: white;
   position: relative;

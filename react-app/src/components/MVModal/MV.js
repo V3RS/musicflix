@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { closeMV } from "../../store/modal";
 import "./MV.css";
 
-export default function MV({ mv }) {
+export default function MV() {
+  const [mv, setMV] = useState({});
   const [mute, setMute] = useState(true);
   const dispatch = useDispatch();
   const history = useHistory();
+  const mvId = useSelector((state) => state.mv.focusId);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`/api/mv/${mvId}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setMV(data);
+    };
+    fetchData();
+  }, [mvId]);
+
   return (
     <div id="modal__mv__c">
       <button className="mv__close__modal" onClick={() => dispatch(closeMV())}>

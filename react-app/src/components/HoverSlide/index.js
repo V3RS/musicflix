@@ -3,6 +3,7 @@ import ReactPlayer from "react-player/youtube";
 import { useDispatch } from "react-redux";
 import { openMV } from "../../store/modal";
 import { useHistory } from "react-router-dom";
+import { setFocusId } from "../../store/mv";
 
 import "./HoverSlide.css";
 
@@ -26,7 +27,13 @@ export default function HoverSlide({ mv }) {
             loop={true}
           />
         </div>
-        <div className="hover__info">
+        <div
+          className="hover__info"
+          onClick={() => {
+            dispatch(setFocusId(mv?.id));
+            dispatch(openMV());
+          }}
+        >
           <h1 id="hover__title">{mv?.title}</h1>
           <h3 id="hover__artist">{mv?.artist}</h3>
           <button id="hover__mute" onClick={() => setMute(!mute)}>
@@ -45,7 +52,13 @@ export default function HoverSlide({ mv }) {
           <button id="hover__add">
             <i className="fas fa-plus"></i>
           </button>
-          <button id="hover__info" onClick={() => dispatch(openMV())}>
+          <button
+            id="hover__info"
+            onClick={() => {
+              dispatch(setFocusId(mv?.id));
+              dispatch(openMV());
+            }}
+          >
             <i className="fas fa-info-circle"></i>
           </button>
         </div>

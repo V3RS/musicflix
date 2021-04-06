@@ -11,7 +11,7 @@ export default function MusicVideoPage() {
   const [mv, setMV] = useState({});
   const [mute, setMute] = useState(false);
   const [play, setPlay] = useState(true);
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(true);
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
@@ -41,14 +41,14 @@ export default function MusicVideoPage() {
           className="react-player"
           url={mv?.video_url}
           width="100vw"
-          height="108vh"
+          height="100vh"
           playing={play}
           controls={true}
           muted={mute}
           loop={true}
         />
         {hover && (
-          <div id="prev__video__info">
+          <div id="modal__video__info">
             <button id="back" onClick={() => history.push("/browse")}>
               <i className="fas fa-arrow-left"></i>
             </button>

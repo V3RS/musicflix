@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 import ContentSlider from "./ContentSlider";
-import { getMusicVideos } from "../../store/mv";
+import { getMusicVideos, setFocusId } from "../../store/mv";
 import "./Browse.css";
 import MVModal from "../MVModal";
 import { openMV } from "../../store/modal";
@@ -34,7 +34,7 @@ export default function Browse() {
       trend.push(all ? all[getRandomInt(64)] : {});
     }
     setTrending(trend);
-  }, [mv]);
+  }, [mv.all]);
 
   return (
     <div className="browse__container">
@@ -61,12 +61,18 @@ export default function Browse() {
           <div id="prev__video__btns">
             <button
               id="prev__v__play"
-              onClick={() => history.push(`/mv/${num}`)}
+              onClick={() => history.push(`/mv/${all ? all[num].id : 1}`)}
             >
               <i className="ic fas fa-play"></i>
               Play
             </button>
-            <button id="prev__v__info" onClick={() => dispatch(openMV())}>
+            <button
+              id="prev__v__info"
+              onClick={() => {
+                dispatch(setFocusId(all ? all[num]?.id : 1));
+                dispatch(openMV());
+              }}
+            >
               <i className="ic fas fa-info-circle"></i>More Info
             </button>
             <button id="prev__v__vol" onClick={() => setMute(!mute)}>
