@@ -11,7 +11,8 @@ const MVModal = ({ mv }) => {
   const mvState = useSelector((state) => state.modal.mvShow);
 
   const closeModal = () => dispatch(closeMV());
-
+  // console.log('LLLLL', mv)
+  // need to switch this to redux state to grab indivdual mv
   return (
     <>
       <Modal

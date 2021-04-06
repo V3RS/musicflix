@@ -53,9 +53,9 @@ function App() {
         <ProtectedRoute
           path="/mv/:mvId"
           exact={true}
-          // authenticated={authenticated}
+          authenticated={authenticated}
         >
-          <Nav setAuthenticated={setAuthenticated} />
+          {/* <Nav setAuthenticated={setAuthenticated} /> */}
           <MusicVideoPage />
         </ProtectedRoute>
         <ProtectedRoute

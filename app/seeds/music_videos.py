@@ -69,7 +69,7 @@ def seed_music_videos():
                         video_url="https://www.youtube.com/watch?v=WILNIXZr2oc&ab_channel=JColeVEVO")
     mvRap9 = MusicVideo(title="Kevin's Heart", genre="Rap", artist="J. Cole", coverart="https://images-na.ssl-images-amazon.com/images/I/81JWjUzu6ZL._SL1400_.jpg",
                         video_url="https://www.youtube.com/watch?v=ufynqs_COF4&ab_channel=J.Cole")
-    mvRap10 = MusicVideo(title="Dreamville", genre="Rap", artist="Under The Sun", coverart="https://m.media-amazon.com/images/I/61xYZaV8RTL._SS500_.jpg",
+    mvRap10 = MusicVideo(title="Under The Sun", genre="Rap", artist="Dreamville", coverart="https://m.media-amazon.com/images/I/61xYZaV8RTL._SS500_.jpg",
                          video_url="https://www.youtube.com/watch?v=eUUuI--jAlM&ab_channel=Dreamville")
     mvRap11 = MusicVideo(title="Tyler Herro", genre="Rap", artist="Jack Harlow", coverart="https://upload.wikimedia.org/wikipedia/en/4/45/Jack_Harlow_-_Tyler_Herro.png",
                          video_url="https://www.youtube.com/watch?v=np9Ub1LilKU&ab_channel=JackHarlow")

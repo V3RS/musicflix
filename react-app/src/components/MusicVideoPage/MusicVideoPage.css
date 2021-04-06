@@ -1,5 +1,27 @@
 .mv__c {
-  position: relative;
-  top: 10vh;
   color: white;
+  margin: 0;
+  padding: 0;
 }
+
+#back {
+  position: absolute;
+  bottom: 250px;
+  left: 25px;
+  color: white;
+  background: none;
+  font-size: 36px;
+  border: none;
+}
+
+#modal__video__info {
+  position: relative;
+  margin-top: -45rem;
+  /* display: none; */
+  /* bottom: 55rem; */
+}
+
+/* .preview__video__container:hover > div,
+.preview__video__container > div:hover {
+  display: block;
+} */
