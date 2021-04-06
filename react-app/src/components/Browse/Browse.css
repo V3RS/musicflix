@@ -4,6 +4,7 @@
 
 .react-player {
   box-shadow: 1px 1px 10px 1px #161616;
+  pointer-events: none;
 }
 
 .sliders__c {

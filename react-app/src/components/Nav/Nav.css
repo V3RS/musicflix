@@ -36,9 +36,16 @@
   position: fixed;
   top: 0;
   left: 0;
+  transition: background-color 0.4s ease;
   background-color: #141414;
   box-shadow: 1px 1px 10px 1px black;
   z-index: 15;
+}
+
+.nav__top__c {
+  box-shadow: none;
+  background: transparent;
+  /* background: rgba(0, 0, 0, 0.9); */
 }
 
 .nav {
@@ -93,4 +100,43 @@
 
 .nav__scroll {
   background: transparent;
+}
+
+#search__c {
+  transition: visibility 0.4s ease;
+  visibility: visible;
+  position: relative;
+  top: 7px;
+  right: 75px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+  width: 270px;
+  height: 34px;
+  background: black;
+}
+
+#search__input {
+  width: 220px;
+  height: 28px;
+  position: absolute;
+  top: 7%;
+  left: 15%;
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 16px;
+}
+
+.close__search {
+  position: absolute;
+  right: 3%;
+  top: 25%;
+}
+
+.search__i__open {
+  position: absolute;
+  top: 23%;
+  left: 5%;
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "./logo.png";
 import { useHistory } from "react-router-dom";
@@ -9,14 +9,21 @@ import "./Nav.css";
 
 export default function Nav({ setAuthenticated }) {
   const history = useHistory();
+  const [searchShow, setSearchShow] = useState(false);
   // const [navDD, setNavDD] = useState(false);
   // const toggleDD = () => setNavDD(true);
   // const toggleDDF = () => setNavDD(false);
   const nav = useRef();
 
-  // if (window.scrollTop() === 0) {
-  //   nav.current.classList.add("nav__scroll");
-  // }
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset === 0) {
+        nav.current && nav.current.classList.add("nav__top__c");
+      } else {
+        nav.current && nav.current.classList.remove("nav__top__c");
+      }
+    });
+  }, []);
 
   return (
     <div ref={nav} className="nav__container">
@@ -41,7 +48,25 @@ export default function Nav({ setAuthenticated }) {
           </NavLink>
         </div>
         <div id="nav__icons__container">
-          <i className="search fas fa-search"></i>
+          {searchShow ? (
+            <div id="search__c">
+              <input
+                type="text"
+                id="search__input"
+                placeholder="Title, artist, or genre"
+              ></input>
+              <i className="search__i__open fas fa-search"></i>
+              <i
+                className="close__search fas fa-times"
+                onClick={() => setSearchShow(false)}
+              ></i>
+            </div>
+          ) : (
+            <i
+              className="search fas fa-search"
+              onClick={() => setSearchShow(true)}
+            ></i>
+          )}
           <a
             id="nav__linktag"
             href="https://www.linkedin.com/in/veerkaran-singh-45b4a9190/"
