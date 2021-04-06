@@ -1,5 +1,15 @@
 .mv__c {
-  position: relative;
-  top: 10vh;
   color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#back {
+  position: absolute;
+  bottom: 200px;
+  left: 25px;
+  color: white;
+  background: none;
+  font-size: 36px;
+  border: none;
 }

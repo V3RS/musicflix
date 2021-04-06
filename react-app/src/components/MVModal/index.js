@@ -11,7 +11,7 @@ const MVModal = ({ mv }) => {
   const mvState = useSelector((state) => state.modal.mvShow);
 
   const closeModal = () => dispatch(closeMV());
-
+  // console.log('LLLLL', mv)
   return (
     <>
       <Modal

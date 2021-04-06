@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
   top: 0;
@@ -15,14 +15,103 @@
 .InnerModalMV {
   text-decoration: none;
   height: 100%;
-  background: transparent;
+  background: #141414;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px 1px black;
   height: fit-content;
   position: fixed;
-  top: 50%;
+  top: 3%;
   /* border-radius: 1px; */
   /* position: fixed; */
 }
 
-.InnerModal:focus {
+.InnerModalMV:focus {
   outline: none;
+}
+
+#modal__mv__c {
+  height: 90vh;
+  width: 48vw;
+}
+
+#modal__video__info {
+  position: relative;
+}
+
+#modal__video__title__container {
+  position: absolute;
+  color: white;
+  left: 5%;
+  bottom: 50px;
+  font-size: 25px;
+}
+
+#modal__vid__artist {
+  position: relative;
+  bottom: 20px;
+}
+
+#modal__v__play {
+  height: 50px;
+  width: 120px;
+  border-radius: 4px;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  color: black;
+}
+
+#modal__v__play:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+#modal__video__btns {
+  position: absolute;
+  bottom: 30px;
+  left: 3%;
+}
+
+#modal__v__vol {
+  position: relative;
+  right: -650px;
+  top: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: gray;
+  background: transparent;
+  font-size: 1rem;
+  border: 1.5px solid gray;
+}
+
+#modal__v__vol:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#modal__add {
+  position: relative;
+  left: 15px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background: transparent;
+  font-size: 1rem;
+  border: 1.5px solid gray;
+}
+
+#modal__add:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#modal__sec__c {
+  color: white;
+  position: relative;
+  top: 10px;
+  left: 20px;
+  font-size: 24px;
+}
+
+#modal__genre {
+  position: absolute;
+  right: 5%;
 }

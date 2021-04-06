@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 import ContentSlider from "./ContentSlider";
 import { getMusicVideos } from "../../store/mv";
@@ -12,13 +13,14 @@ export default function Browse() {
   const [num, setNum] = useState(0);
   const [trending, setTrending] = useState([]);
   const dispatch = useDispatch();
+  const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
   useEffect(() => {
     dispatch(getMusicVideos());
     setNum(getRandomInt(64));
   }, [dispatch]);
   // trending
-
+  const mvState = useSelector((state) => state.modal.mvShow);
   const mv = useSelector((state) => state.mv);
   const all = mv.all;
   const pop = mv.pop;
@@ -44,7 +46,7 @@ export default function Browse() {
           // url="https://www.youtube.com/watch?v=pvuN_WvF1to&ab_channel=LilDicky"
           width="100vw"
           height="108vh"
-          playing={true}
+          playing={mvState ? false : true}
           controls={false}
           muted={mute}
           loop={true}
@@ -57,7 +59,10 @@ export default function Browse() {
             <h3 id="prev__vid__artist">{all ? all[num]?.artist : ""}</h3>
           </div>
           <div id="prev__video__btns">
-            <button id="prev__v__play">
+            <button
+              id="prev__v__play"
+              onClick={() => history.push(`/mv/${num}`)}
+            >
               <i className="ic fas fa-play"></i>
               Play
             </button>
@@ -73,7 +78,7 @@ export default function Browse() {
             </button>
             <button
               id="prev__v__shuffle"
-              onClick={() => setNum(getRandomInt(62))}
+              onClick={() => setNum(getRandomInt(64))}
             >
               <i className="fas fa-random"></i>
             </button>

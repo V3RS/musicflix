@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import ReactPlayer from "react-player/youtube";
+import MVModal from "../MVModal";
+import { openMV } from "../../store/modal";
 import "./MusicVideoPage.css";
 
 export default function MusicVideoPage() {
   const [mv, setMV] = useState({});
+  const [mute, setMute] = useState(true);
+  const [play, setPlay] = useState(true);
+  const [hover, setHover] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const getRandomInt = (max) => Math.floor(Math.random() * max);
 
   const { mvId } = useParams();
-  console.log("mehhhhhhhh");
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`/api/mv/${mvId}`, {
@@ -21,8 +31,60 @@ export default function MusicVideoPage() {
   }, [mvId]);
 
   return (
-    <div className="mv__c">
-      <h1>{mv?.title}</h1>
+    <div
+      className="mv__c"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <div className="preview__video__container">
+        <ReactPlayer
+          className="react-player"
+          url={mv?.video_url}
+          width="100vw"
+          height="108vh"
+          playing={play}
+          controls={true}
+          muted={mute}
+          loop={true}
+        />
+        {hover && (
+          <div id="prev__video__info">
+            <button id="back" onClick={() => history.push("/browse")}>
+              <i className="fas fa-arrow-left"></i>
+            </button>
+            <div id="prev__video__title__container">
+              <h1>{mv?.title}</h1>
+              <h3 id="prev__vid__artist">{mv?.artist}</h3>
+            </div>
+            <div id="prev__video__btns">
+              <button id="prev__v__play" onClick={() => setPlay(!play)}>
+                {play ? (
+                  <i className="ic fas fa-pause"></i>
+                ) : (
+                  <i className="ic fas fa-play"></i>
+                )}
+                {play ? "Pause" : "Play"}
+              </button>
+              <button id="prev__v__info" onClick={() => dispatch(openMV())}>
+                <i className="ic fas fa-info-circle"></i>More Info
+              </button>
+              <button id="prev__v__vol" onClick={() => setMute(!mute)}>
+                {mute ? (
+                  <i className="fas fa-volume-mute"></i>
+                ) : (
+                  <i className="fas fa-volume-up"></i>
+                )}
+              </button>
+              <button
+                id="prev__v__shuffle"
+                onClick={() => history.push(`/mv/${getRandomInt(64)}`)}
+              >
+                <i className="fas fa-random"></i>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
