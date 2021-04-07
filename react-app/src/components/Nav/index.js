@@ -11,12 +11,8 @@ import "./Nav.css";
 
 export default function Nav({ setAuthenticated }) {
   const history = useHistory();
-  const [searchShow, setSearchShow] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
-  // const [navDD, setNavDD] = useState(false);
-  // const toggleDD = () => setNavDD(true);
-  // const toggleDDF = () => setNavDD(false);
   const nav = useRef();
   const search = useRef();
   const searchIc = useRef();
@@ -65,7 +61,6 @@ export default function Nav({ setAuthenticated }) {
           </NavLink>
         </div>
         <div id="nav__icons__container">
-          {/* {searchShow ? ( */}
           <div ref={search} className="search__c">
             <form
               onSubmit={(e) => handleSearch(e)}
@@ -81,29 +76,25 @@ export default function Nav({ setAuthenticated }) {
               ></input>
             </form>
             <i
-              className="search__i__open fas fa-search"
-              onClick={(e) => handleSearch(e)}
-            ></i>
-            <i
               className="close__search fas fa-times"
               onClick={() => {
                 search.current.classList.remove("search__c__open");
                 searchIc.current.classList.remove("search__ic__vis");
-                // setSearchShow(false)
               }}
             ></i>
           </div>
-          {/* ) : ( */}
           <i
             ref={searchIc}
             className="search fas fa-search"
-            onClick={() => {
+            onClick={(e) => {
+              if (search.current.classList.contains("search__c__open")) {
+                handleSearch(e);
+              }
+
               search.current.classList.add("search__c__open");
               searchIc.current.classList.add("search__ic__vis");
-              // setSearchShow(true)
             }}
           ></i>
-          {/* )} */}
           <a
             id="nav__linktag"
             href="https://www.linkedin.com/in/veerkaran-singh-45b4a9190/"

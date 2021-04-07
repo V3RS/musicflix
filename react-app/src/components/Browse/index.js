@@ -11,7 +11,6 @@ import { openMV } from "../../store/modal";
 export default function Browse() {
   const [mute, setMute] = useState(true);
   const [num, setNum] = useState(0);
-  const [trending, setTrending] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
@@ -28,13 +27,7 @@ export default function Browse() {
   const rock = mv.rock;
 
   // trend will be changed when a like system exists for now it will be randomized
-  useEffect(() => {
-    const trend = new Array();
-    for (let i = 0; i < 21; i++) {
-      trend.push(all ? all[getRandomInt(64)] : {});
-    }
-    setTrending(trend);
-  }, [mv.all]);
+  const trending = mv.trending;
 
   return (
     <div className="browse__container">
@@ -42,8 +35,7 @@ export default function Browse() {
       <div className="preview__video__container">
         <ReactPlayer
           className="react-player"
-          url={all ? all[num].video_url : ""}
-          // url="https://www.youtube.com/watch?v=pvuN_WvF1to&ab_channel=LilDicky"
+          url={all ? all[num]?.video_url : ""}
           width="100vw"
           height="108vh"
           playing={mvState ? false : true}
@@ -58,9 +50,7 @@ export default function Browse() {
         />
         <div id="prev__video__info">
           <div id="prev__video__title__container">
-            {/* <h1>Earth</h1> */}
             <h1>{all ? all[num]?.title : ""}</h1>
-            {/* <h3 id="prev__vid__artist">Lil Dicky</h3> */}
             <h3 id="prev__vid__artist">{all ? all[num]?.artist : ""}</h3>
           </div>
           <div id="prev__video__btns">
