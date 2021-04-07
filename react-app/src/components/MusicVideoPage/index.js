@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ReactPlayer from "react-player/youtube";
 import MVModal from "../MVModal";
-import { openMV } from "../../store/modal";
+import { openMV, closeMV } from "../../store/modal";
 import { setFocusId } from "../../store/mv";
 import "./MusicVideoPage.css";
 
@@ -31,6 +31,10 @@ export default function MusicVideoPage() {
     };
     fetchData();
   }, [mvId]);
+
+  useEffect(() => {
+    dispatch(closeMV());
+  }, []);
 
   return (
     <div
