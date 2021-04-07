@@ -251,6 +251,7 @@
   height: fit-content;
   position: fixed;
   top: 5%;
+  box-shadow: 1px 1px 10px 1px black;
   /* border-radius: 1px; */
   /* position: fixed; */
 }

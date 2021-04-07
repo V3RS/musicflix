@@ -11,7 +11,8 @@ import * as sessionActions from "./store/session";
 import Splash from "./components/Splash";
 import Browse from "./components/Browse";
 import MusicVideoPage from "./components/MusicVideoPage";
-
+import SearchPage from "./components/SearchPage";
+import MyList from "./components/MyList";
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -51,12 +52,27 @@ function App() {
           <Browse />
         </ProtectedRoute>
         <ProtectedRoute
+          path="/search"
+          exact={true}
+          authenticated={authenticated}
+        >
+          <Nav setAuthenticated={setAuthenticated} />
+          <SearchPage />
+        </ProtectedRoute>
+        <ProtectedRoute
           path="/mv/:mvId"
           exact={true}
           authenticated={authenticated}
         >
-          {/* <Nav setAuthenticated={setAuthenticated} /> */}
           <MusicVideoPage />
+        </ProtectedRoute>
+        <ProtectedRoute
+          path="/list/:userId"
+          exact={true}
+          authenticated={authenticated}
+        >
+          <Nav setAuthenticated={setAuthenticated} />
+          <MyList />
         </ProtectedRoute>
         <ProtectedRoute
           path="/users"

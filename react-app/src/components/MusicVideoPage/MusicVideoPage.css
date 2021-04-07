@@ -2,12 +2,14 @@
   color: white;
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 #back {
   position: absolute;
-  bottom: 250px;
-  left: 25px;
+  bottom: 330px;
+  left: 75px;
   color: white;
   background: none;
   font-size: 36px;
@@ -16,12 +18,66 @@
 
 #mv__video__information {
   position: relative;
-  margin-top: -45rem;
+  margin-top: -42rem;
   /* display: none; */
   /* bottom: 55rem; */
+}
+
+.react-player4 {
+  pointer-events: none;
 }
 
 /* .preview__video__container:hover > div,
 .preview__video__container > div:hover {
   display: block;
 } */
+
+#mv__hover__add {
+  position: absolute;
+  right: 20%;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid gray;
+}
+#mv__hover__add:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#mv__v__vol {
+  position: absolute;
+  right: 15%;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid white;
+}
+
+#mv__v__vol:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#mv__v__shuffle {
+  position: absolute;
+  right: 10%;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid white;
+}
+
+#mv__v__shuffle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

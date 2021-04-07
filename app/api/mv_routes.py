@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from app.models import MusicVideo
 
 mv_routes = Blueprint('music_videos', __name__)
@@ -26,3 +26,31 @@ def get_mvs():
 def get_mv(id):
     mv = MusicVideo.query.get(id)
     return mv.to_dict()
+
+
+@mv_routes.route('/search', methods=['POST'])
+def get_mvs_search():
+    search_str = request.data.decode("UTF-8")
+    mvs = list()
+
+    mvs_search_title = MusicVideo.query.filter(
+        MusicVideo.title.ilike(f"%{search_str}%"))
+    mvs_search_artist = MusicVideo.query.filter(
+        MusicVideo.artist.ilike(f"%{search_str}%"))
+    mvs_search_genre = MusicVideo.query.filter(
+        MusicVideo.genre.ilike(f"%{search_str}%"))
+
+    mvs_search_title = [mv.to_dict() for mv in mvs_search_title]
+    mvs_search_artist = [mv.to_dict() for mv in mvs_search_artist]
+    mvs_search_genre = [mv.to_dict() for mv in mvs_search_genre]
+
+    mvs.extend(mvs_search_title)
+    mvs.extend(mvs_search_artist)
+    mvs.extend(mvs_search_genre)
+
+    # The for loop below is to remove any duplicate mvs for search functionality
+    return_mvs = list()
+    for mv in mvs:
+        if mv not in return_mvs:
+            return_mvs.append(mv)
+    return {"search_mvs": return_mvs}

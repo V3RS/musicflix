@@ -1,39 +1,39 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useDispatch } from "react-redux";
-import { openMV } from "../../store/modal";
+import { openMV, closeMV } from "../../store/modal";
 import { useHistory } from "react-router-dom";
 import { setFocusId } from "../../store/mv";
 
 import "./HoverSlide.css";
 
-export default function HoverSlide({ mv }) {
+export default function HoverSlide({ mv, wid }) {
   const [mute, setMute] = useState(true);
   const dispatch = useDispatch();
   const history = useHistory();
 
   return (
-    <div className="hover__slide__c">
+    <div
+      className="hover__slide__c"
+      onClick={() => {
+        dispatch(setFocusId(mv?.id));
+        dispatch(openMV());
+      }}
+    >
       <div className="h__slide__c">
-        <div className="hover__vid__c">
-          <ReactPlayer
-            className="react-player2"
-            url={mv?.video_url}
-            width="350px"
-            height="270px"
-            playing={true}
-            controls={false}
-            muted={mute}
-            loop={true}
-          />
-        </div>
-        <div
-          className="hover__info"
-          onClick={() => {
-            dispatch(setFocusId(mv?.id));
-            dispatch(openMV());
-          }}
-        >
+        {/* <div className="hover__vid__c"> */}
+        <ReactPlayer
+          className="react-player2"
+          url={mv?.video_url}
+          width={wid ? "400px" : "350px"}
+          height="270px"
+          playing={true}
+          controls={false}
+          muted={mute}
+          loop={true}
+        />
+        {/* </div> */}
+        <div className="hover__info">
           <h1 id="hover__title">{mv?.title}</h1>
           <h3 id="hover__artist">{mv?.artist}</h3>
           <button id="hover__mute" onClick={() => setMute(!mute)}>
@@ -45,7 +45,10 @@ export default function HoverSlide({ mv }) {
           </button>
           <button
             id="hover__play"
-            onClick={() => history.push(`/mv/${mv?.id}`)}
+            onClick={() => {
+              history.push(`/mv/${mv?.id}`);
+              dispatch(closeMV());
+            }}
           >
             <i className="fas fa-play"></i>
           </button>

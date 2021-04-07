@@ -35,18 +35,23 @@ export default function MusicVideoPage() {
   return (
     <div
       className="mv__c"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onMouseEnter={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+      onClick={() => setHover(true)}
     >
       <MVModal />
       <div className="preview__video__container">
         <ReactPlayer
-          className="react-player"
+          className="react-player4"
           url={mv?.video_url}
           width="100vw"
           height="100vh"
           playing={play && !mvState ? true : false}
-          controls={true}
+          controls={false}
           muted={mute}
           loop={true}
         />
@@ -77,7 +82,10 @@ export default function MusicVideoPage() {
               >
                 <i className="ic fas fa-info-circle"></i>More Info
               </button>
-              <button id="prev__v__vol" onClick={() => setMute(!mute)}>
+              <button id="mv__hover__add">
+                <i className="fas fa-plus"></i>
+              </button>
+              <button id="mv__v__vol" onClick={() => setMute(!mute)}>
                 {mute ? (
                   <i className="fas fa-volume-mute"></i>
                 ) : (
@@ -85,7 +93,7 @@ export default function MusicVideoPage() {
                 )}
               </button>
               <button
-                id="prev__v__shuffle"
+                id="mv__v__shuffle"
                 onClick={() => history.push(`/mv/${getRandomInt(64)}`)}
               >
                 <i className="fas fa-random"></i>

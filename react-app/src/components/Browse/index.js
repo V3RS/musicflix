@@ -50,6 +50,11 @@ export default function Browse() {
           controls={false}
           muted={mute}
           loop={true}
+          config={{
+            youtube: {
+              playerVars: { showinfo: 0 },
+            },
+          }}
         />
         <div id="prev__video__info">
           <div id="prev__video__title__container">

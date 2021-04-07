@@ -1,0 +1,37 @@
+#search__title {
+  color: white;
+  font-size: 36px;
+  position: relative;
+}
+
+#search__p__c {
+  position: relative;
+  top: 100px;
+  left: 100px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+#search__content__c {
+  position: relative;
+  top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+#search__indiv {
+  color: white;
+  display: flex;
+  position: relative;
+}
+
+#search__mv__title {
+  font-size: 20px;
+  position: absolute;
+  top: -5px;
+  left: 10px;
+}

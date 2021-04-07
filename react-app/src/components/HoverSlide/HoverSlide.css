@@ -6,9 +6,16 @@
   cursor: pointer;
 }
 
+.h__slide__c {
+}
+
+.hover__c {
+}
+
 .react-player2 {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  pointer-events: none;
 }
 
 .hover__slide__c:hover {

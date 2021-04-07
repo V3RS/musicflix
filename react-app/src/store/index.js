@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import modalReducer from "./modal";
 import mvReducer from "./mv";
+import mvSearchReducer from "./mvsearch";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   modal: modalReducer,
   mv: mvReducer,
+  mvSearch: mvSearchReducer,
 });
 
 let enhancer;
