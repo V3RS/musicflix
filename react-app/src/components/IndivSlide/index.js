@@ -4,10 +4,11 @@ import "./IndivSlide.css";
 
 import HoverSlide from "../HoverSlide";
 import MVModal from "../MVModal";
+import { setFocusId } from "../../store/mv";
 
 import { openMV } from "../../store/modal";
 
-export default function IndivSlide({ mv }) {
+export default function IndivSlide({ mv, wid }) {
   const [hover, setHover] = useState(false);
   const dispatch = useDispatch();
   const open = () => dispatch(openMV());
@@ -23,8 +24,12 @@ export default function IndivSlide({ mv }) {
             clearTimeout(timeout);
             setHover(false);
           }}
+          onClick={() => {
+            dispatch(setFocusId(mv?.id));
+            dispatch(openMV());
+          }}
         >
-          <HoverSlide hover={hover} setHover={setHover} mv={mv} />
+          <HoverSlide hover={hover} setHover={setHover} wid={wid} mv={mv} />
         </div>
       ) : (
         <div className="album__container" onClick={open}>

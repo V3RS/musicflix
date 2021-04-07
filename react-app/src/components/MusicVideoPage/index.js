@@ -82,6 +82,9 @@ export default function MusicVideoPage() {
               >
                 <i className="ic fas fa-info-circle"></i>More Info
               </button>
+              <button id="mv__hover__add">
+                <i className="fas fa-plus"></i>
+              </button>
               <button id="mv__v__vol" onClick={() => setMute(!mute)}>
                 {mute ? (
                   <i className="fas fa-volume-mute"></i>

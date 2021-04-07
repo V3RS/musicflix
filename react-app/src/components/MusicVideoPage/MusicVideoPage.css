@@ -32,6 +32,22 @@
   display: block;
 } */
 
+#mv__hover__add {
+  position: absolute;
+  right: 20%;
+  top: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background: transparent;
+  font-size: 1.5rem;
+  border: 3px solid gray;
+}
+#mv__hover__add:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 #mv__v__vol {
   position: absolute;
   right: 15%;
