@@ -11,6 +11,7 @@ import { openMV } from "../../store/modal";
 export default function Browse() {
   const [mute, setMute] = useState(true);
   const [num, setNum] = useState(0);
+  const [trending, setTrending] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
@@ -27,7 +28,13 @@ export default function Browse() {
   const rock = mv.rock;
 
   // trend will be changed when a like system exists for now it will be randomized
-  const trending = mv.trending;
+  useEffect(() => {
+    const trend = new Array();
+    for (let i = 0; i < 21; i++) {
+      trend.push(all ? all[getRandomInt(64)] : {});
+    }
+    setTrending(trend);
+  }, [mv.all]);
 
   return (
     <div className="browse__container">

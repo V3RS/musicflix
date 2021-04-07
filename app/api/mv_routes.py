@@ -16,15 +16,15 @@ def get_mvs():
     rap = [mv.to_dict() for mv in rap]
     rock = [mv.to_dict() for mv in rock]
     data = dict()
-    trending = list()
-    for i in range(21):
-        trending.append(all[random.randrange(64)])
-        print(i)
+    # trending = list()
+    # for i in range(21):
+    #     trending.append(all[random.randrange(64)])
+    #     print(i)
     data["all"] = all
     data["pop"] = pop
     data["rap"] = rap
     data["rock"] = rock
-    data["trending"] = trending
+    # data["trending"] = trending
     return data
 
 
