@@ -7,9 +7,9 @@
 }
 
 #back {
-  position: absolute;
-  bottom: 330px;
-  left: 75px;
+  position: fixed;
+  top: 5%;
+  left: 5%;
   color: white;
   background: none;
   font-size: 36px;

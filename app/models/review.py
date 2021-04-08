@@ -22,4 +22,5 @@ class Review(db.Model):
             "rating": self.rating,
             "user_id": self.user_id,
             "music_video_id": self.music_video_id,
+            "user": self.user.to_dict(),
         }
