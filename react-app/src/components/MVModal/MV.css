@@ -32,6 +32,7 @@
 #modal__mv__c {
   height: 90vh;
   width: 48vw;
+  /* overflow: scroll; */
 }
 
 #modal__video__info {
@@ -130,4 +131,54 @@
 
 .mv__close__modal:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+#comment__content__c {
+  overflow: scroll;
+  height: 30vh;
+  position: relative;
+  top: 30px;
+}
+
+.indiv__com__c {
+  position: relative;
+  margin-top: 1.5rem;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.3);
+  height: 6rem;
+  width: 55rem;
+  border-radius: 4px;
+}
+
+.rev_un_c {
+  position: absolute;
+  top: 20%;
+  left: 7.5%;
+}
+
+.rev__pro {
+  position: absolute;
+  top: 10%;
+  left: 1.5%;
+}
+
+.rev__pro > img {
+  border-radius: 4px;
+}
+
+.rev_rating_c {
+  position: absolute;
+  top: 33%;
+  right: 5.5%;
+  font-size: 24px;
+}
+
+.fa-star {
+  color: var(--green);
+}
+
+.rev_comment_c {
+  margin-top: 1.25rem;
+  position: absolute;
+  left: 1.5%;
 }

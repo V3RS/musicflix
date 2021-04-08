@@ -24,5 +24,5 @@ class MusicVideo(db.Model):
             "coverart": self.coverart,
             "video_url": self.video_url,
             "artist": self.artist,
-            "reviews": self.reviews
+            "reviews": [review.to_dict() for review in self.reviews]
         }

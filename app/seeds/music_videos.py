@@ -1,7 +1,5 @@
 from app.models import db, MusicVideo
 
-# Adds a demo user, you can add other users here if you want
-
 
 def seed_music_videos():
 
