@@ -109,3 +109,13 @@
 .ic {
   margin-right: 1rem;
 }
+
+.loading {
+  position: absolute;
+  top: 40vh;
+  left: 45vw;
+}
+
+.loading > div {
+  color: var(--green);
+}

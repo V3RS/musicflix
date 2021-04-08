@@ -7,6 +7,7 @@ import { getMusicVideos, setFocusId } from "../../store/mv";
 import "./Browse.css";
 import MVModal from "../MVModal";
 import { openMV } from "../../store/modal";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 export default function Browse() {
   const [mute, setMute] = useState(true);
@@ -36,7 +37,7 @@ export default function Browse() {
     setTrending(trend);
   }, [mv.all]);
 
-  return (
+  return all ? (
     <div className="browse__container">
       <MVModal mv={all ? all[num] : {}} />
       <div className="preview__video__container">
@@ -109,6 +110,10 @@ export default function Browse() {
           </div>
         </>
       )}
+    </div>
+  ) : (
+    <div className="loading">
+      <CircularProgress size="200px" />
     </div>
   );
 }
