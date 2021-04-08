@@ -24,9 +24,13 @@ export default function IndivSlide({ mv, wid }) {
             clearTimeout(timeout);
             setHover(false);
           }}
-          onClick={() => {
-            dispatch(setFocusId(mv?.id));
-            dispatch(openMV());
+          onClick={(e) => {
+            if (e.target.tagName === "BUTTON" || e.target.tagName === "I") {
+              return;
+            } else {
+              dispatch(setFocusId(mv?.id));
+              dispatch(openMV());
+            }
           }}
         >
           <HoverSlide hover={hover} setHover={setHover} wid={wid} mv={mv} />

@@ -13,15 +13,8 @@ export default function HoverSlide({ mv, wid }) {
   const history = useHistory();
 
   return (
-    <div
-      className="hover__slide__c"
-      onClick={() => {
-        dispatch(setFocusId(mv?.id));
-        dispatch(openMV());
-      }}
-    >
+    <div className="hover__slide__c">
       <div className="h__slide__c">
-        {/* <div className="hover__vid__c"> */}
         <ReactPlayer
           className="react-player2"
           url={mv?.video_url}
@@ -32,22 +25,20 @@ export default function HoverSlide({ mv, wid }) {
           muted={mute}
           loop={true}
         />
-        {/* </div> */}
+        <button id="hover__mute" onClick={() => setMute(!mute)}>
+          {mute ? (
+            <i className="fas fa-volume-mute"></i>
+          ) : (
+            <i className="fas fa-volume-up"></i>
+          )}
+        </button>
         <div className="hover__info">
           <h1 id="hover__title">{mv?.title}</h1>
           <h3 id="hover__artist">{mv?.artist}</h3>
-          <button id="hover__mute" onClick={() => setMute(!mute)}>
-            {mute ? (
-              <i className="fas fa-volume-mute"></i>
-            ) : (
-              <i className="fas fa-volume-up"></i>
-            )}
-          </button>
           <button
             id="hover__play"
             onClick={() => {
               history.push(`/mv/${mv?.id}`);
-              dispatch(closeMV());
             }}
           >
             <i className="fas fa-play"></i>

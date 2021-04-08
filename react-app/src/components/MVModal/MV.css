@@ -134,7 +134,8 @@
 }
 
 #comment__content__c {
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow-y: scroll;
   height: 30vh;
   position: relative;
   top: 30px;

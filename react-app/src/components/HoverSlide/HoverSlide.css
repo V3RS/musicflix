@@ -44,8 +44,8 @@
 
 #hover__mute {
   position: absolute;
-  bottom: 20px;
-  right: 5px;
+  top: 55%;
+  right: 10px;
   border-radius: 50%;
   width: 30px;
   height: 30px;

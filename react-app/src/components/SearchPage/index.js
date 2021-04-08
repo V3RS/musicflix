@@ -10,7 +10,9 @@ export default function SearchPage() {
   return (
     <div id="search__p__c">
       <MVModal />
-      <div id="search__title">Search Results</div>
+      <div id="search__title">
+        Search Results {mvList?.length ? `(${mvList?.length})` : ""}
+      </div>
       <div id="search__content__c">
         {mvList?.map((mv) => (
           <div id="search__indiv">
