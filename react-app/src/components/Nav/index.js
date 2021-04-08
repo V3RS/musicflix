@@ -28,7 +28,9 @@ export default function Nav({ setAuthenticated }) {
   };
 
   useEffect(() => {
-    nav.current && nav.current.classList.add("nav__top__c");
+    setTimeout(() => {
+      nav.current && nav.current.classList.add("nav__top__c");
+    }, 9000);
     window.addEventListener("scroll", () => {
       if (window.pageYOffset === 0) {
         nav.current && nav.current.classList.add("nav__top__c");
