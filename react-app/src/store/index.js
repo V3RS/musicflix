@@ -4,12 +4,14 @@ import sessionReducer from "./session";
 import modalReducer from "./modal";
 import mvReducer from "./mv";
 import mvSearchReducer from "./mvsearch";
+import commentReducer from "./comment";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   modal: modalReducer,
   mv: mvReducer,
   mvSearch: mvSearchReducer,
+  mvComments: commentReducer,
 });
 
 let enhancer;

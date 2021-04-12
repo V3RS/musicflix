@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Redirect } from "react-router";
 import Nav from "./components/Nav";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -88,6 +89,19 @@ function App() {
         >
           <User />
         </ProtectedRoute>
+        <ProtectedRoute
+          path="/users/:userId"
+          exact={true}
+          authenticated={authenticated}
+        >
+          <User />
+        </ProtectedRoute>
+        <ProtectedRoute path="/" authenticated={authenticated}>
+          <Redirect to="/browse" />
+        </ProtectedRoute>
+        <Route path="/" authenticated={authenticated}>
+          <Redirect to="/" />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

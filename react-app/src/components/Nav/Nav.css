@@ -36,15 +36,24 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: background-color 0.4s ease;
+  opacity: 1;
+  /* transition: opacity 0.4s ease; */
+  transition: background-color 0.6s ease;
   background-color: #141414;
+  /* look for background-color transition work arround for linear-gradients */
+  /* background-image: linear-gradient(to bottom, black, #141414); */
+  background-position: left;
   box-shadow: 1px 1px 10px 1px black;
   z-index: 15;
 }
 
 .nav__top__c {
-  box-shadow: none;
   background: transparent;
+  box-shadow: none;
+  /* background-position: right; */
+  /* opacity: 1; */
+  /* background-color: transparent; */
+  /* transition: all 3s ease-in-out; */
   /* background: rgba(0, 0, 0, 0.9); */
 }
 

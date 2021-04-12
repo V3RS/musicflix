@@ -14,10 +14,17 @@
   height: 100%;
   border-radius: 3px;
 }
-
-#drop_down_icon {
+.drop_down_icon {
   position: relative;
   top: 4px;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.drop_down_icon_open {
+  top: -4px;
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
 }
 
 #menu-list-grow {

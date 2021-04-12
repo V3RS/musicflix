@@ -18,7 +18,7 @@ export default function Browse() {
   const getRandomInt = (max) => Math.floor(Math.random() * max);
   useEffect(() => {
     dispatch(getMusicVideos());
-    setNum(getRandomInt(64));
+    setNum(getRandomInt(63));
   }, [dispatch]);
   // trending
   const mvState = useSelector((state) => state.modal.mvShow);
@@ -32,7 +32,7 @@ export default function Browse() {
   useEffect(() => {
     const trend = new Array();
     for (let i = 0; i < 21; i++) {
-      trend.push(all ? all[getRandomInt(64)] : {});
+      trend.push(all ? all[getRandomInt(63)] : {});
     }
     setTrending(trend);
   }, [mv.all]);
@@ -87,7 +87,7 @@ export default function Browse() {
             </button>
             <button
               id="prev__v__shuffle"
-              onClick={() => setNum(getRandomInt(64))}
+              onClick={() => setNum(getRandomInt(63))}
             >
               <i className="fas fa-random"></i>
             </button>

@@ -98,7 +98,7 @@ export default function MusicVideoPage() {
               </button>
               <button
                 id="mv__v__shuffle"
-                onClick={() => history.push(`/mv/${getRandomInt(64)}`)}
+                onClick={() => history.push(`/mv/${getRandomInt(63)}`)}
               >
                 <i className="fas fa-random"></i>
               </button>

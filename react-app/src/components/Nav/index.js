@@ -19,6 +19,8 @@ export default function Nav({ setAuthenticated }) {
 
   useEffect(() => {
     dispatch(mvSearch(searchQuery));
+    if (searchQuery) history.push("/search");
+    else history.push("/browse");
   }, [searchQuery]);
 
   const handleSearch = (e) => {
@@ -30,7 +32,7 @@ export default function Nav({ setAuthenticated }) {
   useEffect(() => {
     setTimeout(() => {
       nav.current && nav.current.classList.add("nav__top__c");
-    }, 9000);
+    }, 7000);
     window.addEventListener("scroll", () => {
       if (window.pageYOffset === 0) {
         nav.current && nav.current.classList.add("nav__top__c");
@@ -69,6 +71,7 @@ export default function Nav({ setAuthenticated }) {
               className="search__form"
               // method="post"
             >
+              {/* add search query to state so when clicked by genre it can be displayed in input box and on search page */}
               <input
                 type="text"
                 id="search__input"
@@ -82,6 +85,8 @@ export default function Nav({ setAuthenticated }) {
               onClick={() => {
                 search.current.classList.remove("search__c__open");
                 searchIc.current.classList.remove("search__ic__vis");
+                setSearchQuery("");
+                history.push("/browse");
               }}
             ></i>
           </div>
