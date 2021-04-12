@@ -1,0 +1,57 @@
+#textarea__com {
+  position: absolute;
+  left: 2%;
+  top: 14%;
+  max-height: 60px;
+  max-width: 600px;
+  height: 60px;
+  width: 600px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
+
+#textarea__com:focus {
+  outline: none;
+}
+
+.comment__form__c {
+  margin-top: 3.5rem;
+}
+
+#form__rating__c {
+  position: absolute;
+  right: 0%;
+  top: 12%;
+}
+
+#form__rating__c > div > span {
+  color: var(--green);
+}
+/* #form__rating__c > div > div {
+  position: relative;
+  top: 22px;
+  right: 105px;
+  text-align: center;
+} */
+
+#com__sub {
+  position: absolute;
+  right: 9%;
+  bottom: 20%;
+  height: 30px;
+  width: 120px;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: black;
+  background-color: white;
+  border: none;
+}
+
+#com__sub:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}

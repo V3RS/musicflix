@@ -46,10 +46,15 @@ export default function DropDown({ setAuthenticated }) {
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
+  const drop = React.useRef();
+
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
+    if (open) drop.current && drop.current.classList.add("drop_down_icon_open");
+    if (!open)
+      drop.current && drop.current.classList.remove("drop_down_icon_open");
 
     prevOpen.current = open;
   }, [open]);
@@ -71,7 +76,7 @@ export default function DropDown({ setAuthenticated }) {
           <span id="profile__img">
             <img id="propic" src={propic} />
           </span>
-          <span id="drop_down_icon">
+          <span className="drop_down_icon" ref={drop}>
             <ArrowDropDownIcon />
           </span>
         </Button>

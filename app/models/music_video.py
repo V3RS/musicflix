@@ -24,5 +24,15 @@ class MusicVideo(db.Model):
             "coverart": self.coverart,
             "video_url": self.video_url,
             "artist": self.artist,
+        }
+
+    def to_dict_with_revs(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "genre": self.genre,
+            "coverart": self.coverart,
+            "video_url": self.video_url,
+            "artist": self.artist,
             "reviews": [review.to_dict() for review in self.reviews]
         }

@@ -31,10 +31,12 @@ def get_mvs():
 @mv_routes.route('/<int:id>')
 def get_mv(id):
     mv = MusicVideo.query.get(id)
-    return mv.to_dict()
+    # seperate function to grab with reviews
+    mv = mv.to_dict_with_revs()
+    return mv
 
 
-@mv_routes.route('/search', methods=['POST'])
+@ mv_routes.route('/search', methods=['POST'])
 def get_mvs_search():
     search_str = request.data.decode("UTF-8")
     mvs = list()

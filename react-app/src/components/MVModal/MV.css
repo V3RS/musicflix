@@ -71,6 +71,11 @@
   left: 3%;
 }
 
+#click__genre {
+  color: var(--green);
+  cursor: pointer;
+}
+
 #modal__v__vol {
   position: relative;
   right: -650px;
@@ -133,11 +138,18 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-#comment__content__c {
-  overflow: scroll;
-  height: 30vh;
+.comment__content__c {
+  /* overflow: scroll; */
+  margin-top: 1.5rem;
+  overflow-y: scroll;
+  height: 28vh;
   position: relative;
   top: 30px;
+}
+
+.form__show {
+  height: 15vh;
+  margin-top: 0rem;
 }
 
 .indiv__com__c {
@@ -154,6 +166,8 @@
   position: absolute;
   top: 20%;
   left: 7.5%;
+  font-size: 20px;
+  color: var(--green);
 }
 
 .rev__pro {
@@ -181,4 +195,64 @@
   margin-top: 1.25rem;
   position: absolute;
   left: 1.5%;
+}
+
+.modal__loading > div {
+  color: var(--green);
+}
+
+.modal__loading {
+  position: absolute;
+  top: 30vh;
+  left: -3vw;
+}
+
+#add__c__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 12%;
+  right: 5%;
+  height: 30px;
+  width: 130px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  /* color: white;
+  background: rgba(0, 0, 0, 0.3); */
+  color: black;
+  background-color: white;
+  border: none;
+}
+
+.fa-comment {
+  margin-right: 0.2rem;
+}
+
+#add__c__btn:hover,
+.edit__btn:hover,
+.delete__btn:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.edit__delete__c {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+.edit__btn,
+.delete__btn {
+  height: 30px;
+  width: 70px;
+  border-radius: 4px;
+}
+
+.delete__btn {
+  margin-left: 0.5rem;
+}
+
+.fa-trash-alt,
+.fa-edit {
+  margin-right: 0.3rem;
 }
