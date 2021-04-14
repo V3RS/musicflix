@@ -73,7 +73,7 @@
 ## Overall Structure
 
 ### Back End
-The app was built using Flask and SQLAlchemy on the back end with a PostgreSQL database. The backend structure is RESTful with AJAX requests that are fullfilled with a JSON Objects. Model associations are used to minimize database queries to the backend, assuring speed and reliability.
+The app was built using Flask and SQLAlchemy on the back end with a PostgreSQL database. The backend structure is RESTful with AJAX requests that are fullfilled with JSON Objects. Model associations are used to minimize database queries to the backend, assuring speed and reliability.
 
 ### Front End
 The front end is built with React and Javascript while utilizing Redux architecture, producing a lightning-fast user interface and calling upon dynamically rendered components.
