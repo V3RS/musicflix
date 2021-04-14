@@ -13,7 +13,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/V3RS/musicflix">
-    <img src="https://musicflix.s3.us-east-2.amazonaws.com/logo.png" alt="Logo" width="80" height="120" style="background-color:white">
+    <img src="https://musicflix.s3.us-east-2.amazonaws.com/logo.png" alt="Logo" width="150" height="80" style="background-color:white">
   </a>
 
   <h3 align="center">Musicflix</h3>
@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Click here to view Instrument Match live on the web!](https://musicflix.herokuapp.com/)
+[Click here to view Musicflix live on the web!](https://musicflix.herokuapp.com/)
 <br>
 </br>
 <img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/homepage-ss.png" alt="homepage ss">
