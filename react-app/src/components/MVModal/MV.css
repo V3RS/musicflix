@@ -32,6 +32,7 @@
 #modal__mv__c {
   height: 90vh;
   width: 48vw;
+  border-radius: 4px;
   /* overflow: scroll; */
 }
 
@@ -157,8 +158,10 @@
   margin-top: 1.5rem;
   font-size: 18px;
   background: rgba(0, 0, 0, 0.3);
-  height: 6rem;
-  width: 55rem;
+  /* height: 6rem;
+  width: 55rem; */
+  width: 46vw;
+  height: 10vh;
   border-radius: 4px;
 }
 
@@ -178,13 +181,6 @@
 
 .rev__pro > img {
   border-radius: 4px;
-}
-
-.rev_rating_c {
-  position: absolute;
-  top: 33%;
-  right: 5.5%;
-  font-size: 24px;
 }
 
 .fa-star {
@@ -229,27 +225,44 @@
   margin-right: 0.2rem;
 }
 
-#add__c__btn:hover,
+#add__c__btn:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 .edit__btn:hover,
 .delete__btn:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.rev_rating_c {
+  position: absolute;
+  /* bottom: 13%; */
+  top: 20%;
+  right: 3.5%;
+  font-size: 18px;
 }
 
 .edit__delete__c {
   position: absolute;
-  top: 15%;
-  left: 15%;
+  bottom: 13%;
+  /* top: 25%; */
+  right: 3%;
 }
 
-.edit__btn,
+/* .edit__btn,
 .delete__btn {
   height: 30px;
   width: 70px;
   border-radius: 4px;
-}
+} */
 
 .delete__btn {
-  margin-left: 0.5rem;
+  color: gray;
+  margin-left: 1rem;
+}
+
+.delete__btn:hover {
+  color: red;
 }
 
 .fa-trash-alt,

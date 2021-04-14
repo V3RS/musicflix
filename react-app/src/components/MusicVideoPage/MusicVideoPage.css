@@ -16,11 +16,17 @@
   border: none;
 }
 
-#mv__video__information {
+.mv__video__information {
   position: relative;
   margin-top: -42rem;
   /* display: none; */
   /* bottom: 55rem; */
+  transition: all 0.75s ease;
+  opacity: 1;
+}
+
+.mv__video__hover {
+  opacity: 0;
 }
 
 .react-player4 {

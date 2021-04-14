@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import CommentForm from "../CommentForm";
 import { closeMV } from "../../store/modal";
 import Avatar from "@material-ui/core/Avatar";
 import "./MV.css";
-import CommentForm from "../CommentForm";
+import Comment from "../Comment";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { setCommentsRedux } from "../../store/comment";
 import { deleteComment } from "../../services/mv";
@@ -145,34 +146,15 @@ export default function MV() {
         <div className="comment__content__c" ref={comContainer}>
           {comments &&
             comments.map((rev) => (
-              <div key={rev.id} className="indiv__com__c">
-                <Avatar
-                  className="rev__pro"
-                  variant="square"
-                  src={propic}
-                  alt="reviewer pic"
-                />
-                <div className="rev_un_c">{rev.user.username}</div>
-                {session.id === rev.user.id && (
-                  <div className="edit__delete__c">
-                    <button className="edit__btn">
-                      <i className="fas fa-edit"></i>
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => dispatch(deleteComment(rev.id, mvId))}
-                      className="delete__btn"
-                    >
-                      <i className="fas fa-trash-alt"></i>
-                      Delete
-                    </button>
-                  </div>
-                )}
-                <div className="rev_rating_c">
-                  {rev.rating} <i className="fas fa-star"></i>
-                </div>
-                <div className="rev_comment_c">{rev.comment}</div>
-              </div>
+              <Comment
+                key={rev.id}
+                rev={rev}
+                Avatar={Avatar}
+                session={session}
+                dispatch={dispatch}
+                deleteComment={deleteComment}
+                mvId={mvId}
+              />
             ))}
         </div>
       </div>
