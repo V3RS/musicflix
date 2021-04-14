@@ -24,7 +24,7 @@
     <a href="https://github.com/V3RS/musicflix/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://musicflix.herokuapp.com/">View Site</a>
+    <a href="https://musicflix-app.herokuapp.com/">View Site</a>
     ·
     <a href="https://github.com/V3RS/musicflix/issues">Report Bug</a>
     ·
@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Click here to view Musicflix live on the web!](https://musicflix.herokuapp.com/)
+[Click here to view Musicflix live on the web!](https://musicflix-app.herokuapp.com/)
 <br>
 </br>
 <img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/homepage-ss.png" alt="homepage ss">
