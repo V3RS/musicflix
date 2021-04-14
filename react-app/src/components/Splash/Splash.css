@@ -11,7 +11,7 @@
 }
 
 .sc {
-  background: url("./bg.jpg");
+  background: url("https://musicflix.s3.us-east-2.amazonaws.com/bg.jpg");
   height: 743px;
   /* height: 100vh; */
   position: absolute;

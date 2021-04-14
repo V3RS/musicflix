@@ -1,11 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
+import { ClickAwayListener } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
-import Box from "@material-ui/core/Box";
-import { postComment } from "../../services/mv";
+// import Box from "@material-ui/core/Box";
+import { postComment, editComment } from "../../services/mv";
 import "./CommentForm.css";
-import { setCommentsRedux } from "../../store/comment";
+// import { setCommentsRedux } from "../../store/comment";
 
 // const labels = {
 //   0.5: "eh",
@@ -28,10 +29,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CommentForm({ comForm, setComForm, setMV }) {
-  const [rating, setRating] = React.useState(0);
-  const [comment, setComment] = React.useState("");
-  const [hover, setHover] = React.useState(-1);
+export default function CommentForm({
+  comForm,
+  setComForm,
+  editCom,
+  editRating,
+  rev,
+}) {
+  const [rating, setRating] = React.useState(editRating ? editRating : 0);
+  const [comment, setComment] = React.useState(editCom ? editCom : "");
+  // const [hover, setHover] = React.useState(-1);
 
   const dispatch = useDispatch();
 
@@ -41,52 +48,63 @@ export default function CommentForm({ comForm, setComForm, setMV }) {
   const classes = useStyles();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (rating) {
+
+    if (editCom) {
       setComForm(!comForm);
-      dispatch(postComment(comment, rating, mvId, session.id));
+      dispatch(editComment(comment, rating, rev.id, mvId));
     } else {
-      alert("Pick a rating!");
+      if (rating) {
+        setComForm(!comForm);
+        dispatch(postComment(comment, rating, mvId, session.id));
+      } else {
+        alert("Pick a rating!");
+      }
     }
   };
 
+  const handleClickAway = () => setComForm(!comForm);
+
   return (
-    <div className="comment__form__c">
-      <div className="indiv__com__c">
-        <form onSubmit={handleSubmit}>
-          <textarea
-            id="textarea__com"
-            type="text"
-            placeholder="Add a comment..."
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            required
-          ></textarea>
-          <div id="form__rating__c">
-            <div className={classes.root}>
-              <Rating
-                name="hover-feedback"
-                value={rating}
-                // change precision back when update the database
-                precision={1}
-                onChange={(event, newValue) => {
-                  setRating(newValue);
-                }}
-                // onChangeActive={(event, newHover) => {
-                //   setHover(newHover);
-                // }}
-                required
-              />
-              {/* {rating !== null && (
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <div className="comment__form__c">
+        <div className="indiv__com__c">
+          <form onSubmit={handleSubmit}>
+            <textarea
+              id="textarea__com"
+              type="text"
+              placeholder="Add a comment..."
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              required
+            ></textarea>
+            <div id="form__rating__c">
+              <div className={classes.root}>
+                <Rating
+                  name="hover-feedback"
+                  value={rating}
+                  // change precision back when update the database
+                  precision={1}
+                  onChange={(event, newValue) => {
+                    setRating(newValue);
+                  }}
+                  // onChangeActive={(event, newHover) => {
+                  //   setHover(newHover);
+                  // }}
+                  required
+                />
+                {/* {rating !== null && (
                 <Box ml={2}>{labels[hover !== -1 ? hover : rating]}</Box>
               )} */}
+              </div>
             </div>
-          </div>
-          <button id="com__sub">
-            {" "}
-            <i className="fas fa-comment"></i> Comment
-          </button>
-        </form>
+            <button id="com__sub">
+              {" "}
+              <i className="fas fa-comment"></i>
+              {editCom ? "Update" : "Comment"}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </ClickAwayListener>
   );
 }

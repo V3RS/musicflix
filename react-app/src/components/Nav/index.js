@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "./logo.png";
+// import logo from "./logo.png";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 // import LogoutButton from "../auth/LogoutButton";
@@ -49,7 +49,7 @@ export default function Nav({ setAuthenticated }) {
           <img
             id="logo"
             onClick={() => history.push("/")}
-            src={logo}
+            src="https://musicflix.s3.us-east-2.amazonaws.com/logo.png"
             alt="musicflix"
           />
         </div>

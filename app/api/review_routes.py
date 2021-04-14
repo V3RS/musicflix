@@ -36,3 +36,15 @@ def delete_review():
     mv = MusicVideo.query.get(data["mv_id"])
     mv = mv.to_dict_with_revs()
     return {"reviews": mv["reviews"]}
+
+
+@review_routes.route('/edit', methods=['PUT'])
+def edit_review():
+    data = request.json
+    review = Review.query.get(data["id"])
+    review.rating = data["rating"]
+    review.comment = data["comment"]
+    db.session.commit()
+    mv = MusicVideo.query.get(data["mv_id"])
+    mv = mv.to_dict_with_revs()
+    return {"reviews": mv["reviews"]}

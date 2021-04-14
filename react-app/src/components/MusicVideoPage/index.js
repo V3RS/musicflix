@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,13 +12,27 @@ export default function MusicVideoPage() {
   const [mv, setMV] = useState({});
   const [mute, setMute] = useState(false);
   const [play, setPlay] = useState(true);
-  const [hover, setHover] = useState(true);
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
   const mvState = useSelector((state) => state.modal.mvShow);
 
   const { mvId } = useParams();
+  const hover = useRef();
+
+  useEffect(() => {
+    hover.current && hover.current.classList.add("mv__video__hover");
+    setTimeout(() => {
+      hover.current && hover.current.classList.remove("mv__video__hover");
+    }, 3000);
+  }, []);
+
+  useEffect(() => {
+    setInterval(() => {
+      hover.current && hover.current.classList.add("mv__video__hover");
+    }, 5000);
+  });
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`/api/mv/${mvId}`, {
@@ -39,13 +53,18 @@ export default function MusicVideoPage() {
   return (
     <div
       className="mv__c"
-      onMouseEnter={() => {
-        setHover(true);
+      onMouseMove={() => {
+        hover.current && hover.current.classList.remove("mv__video__hover");
       }}
+      // onMouseEnter={() => {
+      //   hover.current && hover.current.classList.remove("mv__video__hover");
+      // }}
       onMouseLeave={() => {
-        setHover(false);
+        hover.current && hover.current.classList.add("mv__video__hover");
       }}
-      onClick={() => setHover(true)}
+      // onClick={() =>
+      //   hover.current && hover.current.classList.remove("mv__video__hover")
+      // }
     >
       <MVModal />
       <div className="preview__video__container">
@@ -59,52 +78,50 @@ export default function MusicVideoPage() {
           muted={mute}
           loop={true}
         />
-        {hover && (
-          <div id="mv__video__information">
-            <button id="back" onClick={() => history.push("/browse")}>
-              <i className="fas fa-arrow-left"></i>
-            </button>
-            <div id="prev__video__title__container">
-              <h1>{mv?.title}</h1>
-              <h3 id="prev__vid__artist">{mv?.artist}</h3>
-            </div>
-            <div id="prev__video__btns">
-              <button id="prev__v__play" onClick={() => setPlay(!play)}>
-                {play ? (
-                  <i className="ic fas fa-pause"></i>
-                ) : (
-                  <i className="ic fas fa-play"></i>
-                )}
-                {play ? "Pause" : "Play"}
-              </button>
-              <button
-                id="prev__v__info"
-                onClick={() => {
-                  dispatch(setFocusId(mv?.id));
-                  dispatch(openMV());
-                }}
-              >
-                <i className="ic fas fa-info-circle"></i>More Info
-              </button>
-              <button id="mv__hover__add">
-                <i className="fas fa-plus"></i>
-              </button>
-              <button id="mv__v__vol" onClick={() => setMute(!mute)}>
-                {mute ? (
-                  <i className="fas fa-volume-mute"></i>
-                ) : (
-                  <i className="fas fa-volume-up"></i>
-                )}
-              </button>
-              <button
-                id="mv__v__shuffle"
-                onClick={() => history.push(`/mv/${getRandomInt(63)}`)}
-              >
-                <i className="fas fa-random"></i>
-              </button>
-            </div>
+        <div className="mv__video__information" ref={hover}>
+          <button id="back" onClick={() => history.push("/browse")}>
+            <i className="fas fa-arrow-left"></i>
+          </button>
+          <div id="prev__video__title__container">
+            <h1>{mv?.title}</h1>
+            <h3 id="prev__vid__artist">{mv?.artist}</h3>
           </div>
-        )}
+          <div id="prev__video__btns">
+            <button id="prev__v__play" onClick={() => setPlay(!play)}>
+              {play ? (
+                <i className="ic fas fa-pause"></i>
+              ) : (
+                <i className="ic fas fa-play"></i>
+              )}
+              {play ? "Pause" : "Play"}
+            </button>
+            <button
+              id="prev__v__info"
+              onClick={() => {
+                dispatch(setFocusId(mv?.id));
+                dispatch(openMV());
+              }}
+            >
+              <i className="ic fas fa-info-circle"></i>More Info
+            </button>
+            <button id="mv__hover__add">
+              <i className="fas fa-plus"></i>
+            </button>
+            <button id="mv__v__vol" onClick={() => setMute(!mute)}>
+              {mute ? (
+                <i className="fas fa-volume-mute"></i>
+              ) : (
+                <i className="fas fa-volume-up"></i>
+              )}
+            </button>
+            <button
+              id="mv__v__shuffle"
+              onClick={() => history.push(`/mv/${getRandomInt(63)}`)}
+            >
+              <i className="fas fa-random"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
