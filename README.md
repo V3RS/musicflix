@@ -13,7 +13,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/V3RS/musicflix">
-    <img src="https://musicflix.s3.us-east-2.amazonaws.com/logo.png" alt="Logo" width="150" height="80" style="background-color:white">
+    <img src="https://musicflix.s3.us-east-2.amazonaws.com/logo.png" alt="Logo" width="180" height="80" style="background-color:white">
   </a>
 
   <h3 align="center">Musicflix</h3>
