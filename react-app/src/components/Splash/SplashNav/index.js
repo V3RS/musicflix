@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.png";
+// import logo from "./logo.png";
 import { useHistory } from "react-router-dom";
 import { openLogin } from "../../../store/modal";
 import { useDispatch } from "react-redux";
@@ -17,7 +17,7 @@ export default function SplashNav() {
           <img
             id="splash__logo"
             onClick={() => history.push("/")}
-            src={logo}
+            src="https://musicflix.s3.us-east-2.amazonaws.com/logo.png"
             alt="musicflix"
           />
         </div>
