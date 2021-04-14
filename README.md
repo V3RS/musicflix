@@ -19,7 +19,7 @@
   <h3 align="center">Musicflix</h3>
 
   <p align="center">
-    Musicflix is a unique take on Netfflix for avid music video lover. This application includes an intutive User Interface and an easily accessible backend to query for specfic videos that the user wants to watch! You can browse Music Videos via search by title, artist, or genre. Users can leave a comment on videos and also save their favorites to their 'list'.
+    Musicflix is a unique take on Netflix where music videos are showcased instead of TV shows and movies. This application includes an intutive User Interface and an easily accessible backend to query for specfic videos that the user wants to watch! You can browse Music Videos via search by title, artist, or genre. Users can leave a comment on videos and also save their favorites to their 'list'.
     <br />
     <a href="https://github.com/V3RS/musicflix/wiki"><strong>Explore the docs »</strong></a>
     <br />
