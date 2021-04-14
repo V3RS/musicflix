@@ -131,17 +131,11 @@ Here is everything we need you to do to get started with Instrument Match.
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### An easy-to-use login with a pre-configured Demo User.
-<br>
-</br>
-<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/demo-login.gif" alt="demo-login gif">
+![demo-login gif](https://musicflix.s3.us-east-2.amazonaws.com/site-images/demo-login.gif)
 ### Search for Music Videos by title, artist, or genre.
-<br>
-</br>
-<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/search.gif" alt="search gif">
+![search gif](https://musicflix.s3.us-east-2.amazonaws.com/site-images/search.gif)
 ### Leave a rating and a comment on a Music Video.
-<br>
-</br>
-<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/reviews.gif" alt="rating gif">
+![rating gif](https://musicflix.s3.us-east-2.amazonaws.com/site-images/reviews.gif)
 <!-- ### Add a Music Video to your list
 ![My List](site-images/my-list.gif) -->
 <!-- ## Obstacles -->
