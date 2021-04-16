@@ -56,6 +56,7 @@ def get_mvs_search():
     mvs.extend(mvs_search_artist)
     mvs.extend(mvs_search_genre)
 
+    # look into set for removing duplicates!
     # The for loop below is to remove any duplicate mvs for search functionality
     return_mvs = list()
     for mv in mvs:
