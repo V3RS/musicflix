@@ -68,7 +68,7 @@
 [Click here to view Musicflix live on the web!](https://musicflix-app.herokuapp.com/)
 <br>
 </br>
-<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/homepage-ss.png" alt="homepage ss">
+<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/homepage-ss.png" alt="homepage ss" />
 
 ## Overall Structure
 
@@ -131,7 +131,7 @@ Here is everything we need you to do to get started with Instrument Match.
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### An easy-to-use login with a pre-configured Demo User.
-<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/demo-login.gif" alt="demo login gif">
+<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/demo-login.gif" alt="demo login gif" />
 <!-- ![demo-login gif](imgs/demo-login.gif) -->
 ### Search for Music Videos by title, artist, or genre.
 ![search gif](imgs/search.gif)
