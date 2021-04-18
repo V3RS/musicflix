@@ -131,8 +131,7 @@ Here is everything we need you to do to get started with Instrument Match.
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### An easy-to-use login with a pre-configured Demo User.
-<img src="https://musicflix.s3.us-east-2.amazonaws.com/site-images/demo-login.gif" alt="demo login gif" />
-<!-- ![demo-login gif](imgs/demo-login.gif) -->
+![demo-login gif](imgs/demo-login.gif)
 ### Search for Music Videos by title, artist, or genre.
 ![search gif](imgs/search.gif)
 ### Leave a rating and a comment on a Music Video.
