@@ -57,7 +57,7 @@ export default function Nav({ setAuthenticated }) {
           <NavLink activeClassName="act" id="home" to="/browse">
             Home
           </NavLink>
-          <NavLink activeClassName="act" id="list" to="/profile/id/list">
+          <NavLink activeClassName="act" id="list" to="/mylist">
             My List
           </NavLink>
           <NavLink activeClassName="act" id="list" to="/creator">

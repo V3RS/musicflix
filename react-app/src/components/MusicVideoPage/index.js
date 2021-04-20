@@ -27,10 +27,11 @@ export default function MusicVideoPage() {
   const hover = useRef();
 
   useEffect(() => {
+    setInList(false);
     userList.forEach((mv) => {
       if (`${mv.id}` === mvId) setInList(true);
     });
-  }, [userList]);
+  }, [userList, mvId]);
 
   useEffect(() => {
     hover.current && hover.current.classList.add("mv__video__hover");

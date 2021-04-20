@@ -76,7 +76,7 @@ function App() {
           <MusicVideoPage />
         </ProtectedRoute>
         <ProtectedRoute
-          path="/list/:userId"
+          path="/mylist"
           exact={true}
           authenticated={authenticated}
         >
