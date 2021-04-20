@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router";
 import Nav from "./components/Nav";
@@ -8,6 +8,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import * as sessionActions from "./store/session";
+import { getList } from "./store/list";
 
 import Splash from "./components/Splash";
 import Browse from "./components/Browse";
@@ -20,11 +21,18 @@ function App() {
 
   const dispatch = useDispatch();
 
+  const loggedInUser = useSelector((state) => state.session.user);
+
+  useEffect(() => {
+    dispatch(getList(loggedInUser?.id));
+  }, [loggedInUser]);
+
   useEffect(() => {
     (async () => {
       dispatch(sessionActions.restoreUser());
       const user = await authenticate();
       if (!user.errors) {
+        dispatch(getList(user.id));
         setAuthenticated(true);
       }
       setLoaded(true);
@@ -68,7 +76,7 @@ function App() {
           <MusicVideoPage />
         </ProtectedRoute>
         <ProtectedRoute
-          path="/list/:userId"
+          path="/mylist"
           exact={true}
           authenticated={authenticated}
         >

@@ -16,6 +16,7 @@ export default function Browse() {
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
+
   useEffect(() => {
     dispatch(getMusicVideos());
     setNum(getRandomInt(63));

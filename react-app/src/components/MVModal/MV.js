@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import CommentForm from "../CommentForm";
 import { closeMV } from "../../store/modal";
+import { postList, deleteList } from "../../store/list";
 import Avatar from "@material-ui/core/Avatar";
 import "./MV.css";
 import Comment from "../Comment";
@@ -16,12 +17,15 @@ export default function MV() {
   const [mv, setMV] = useState({});
   const [mute, setMute] = useState(true);
   const [comForm, setComForm] = useState(false);
+  const [inList, setInList] = useState(false);
   // const [comments, setComments] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
   const mvId = useSelector((state) => state.mv.focusId);
   let comments = useSelector((state) => state.mvComments);
   const session = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session.user);
+  const userList = useSelector((state) => state.userList);
   // setComments(commentsRedux);
 
   // console.log("LLLLL", comments);
@@ -52,6 +56,17 @@ export default function MV() {
     };
     fetchData();
   }, [mvId, dispatch]);
+
+  const addToList = () => dispatch(postList(mvId, user.id));
+  const deleteFromList = () => dispatch(deleteList(mvId, user.id));
+  const hover = useRef();
+
+  useEffect(() => {
+    setInList(false);
+    userList.forEach((mv) => {
+      if (mv.id === mvId) setInList(true);
+    });
+  }, [userList, mvId]);
 
   let rating = 0;
   comments &&
@@ -96,8 +111,22 @@ export default function MV() {
             <i className="ic fas fa-play"></i>
             Play
           </button>
-          <button id="modal__add">
-            <i className="fas fa-plus"></i>
+          <button
+            id="modal__add"
+            onClick={
+              inList
+                ? () => {
+                    deleteFromList();
+                    setInList(false);
+                  }
+                : addToList
+            }
+          >
+            {inList ? (
+              <i class="fas fa-minus"></i>
+            ) : (
+              <i className="fas fa-plus"></i>
+            )}
           </button>
           <button id="modal__v__vol" onClick={() => setMute(!mute)}>
             {mute ? (

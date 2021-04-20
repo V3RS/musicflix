@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import { closeLogin, openSignup } from "../../store/modal.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 
 import "./LoginModal.css";
@@ -19,6 +19,7 @@ const LoginForm = ({ authenticated, setAuthenticated, email, updateEmail }) => {
     e.preventDefault();
     setErrors([""]);
     const user = await dispatch(sessionActions.loginUser({ email, password }));
+
     // const data = await user.json()
 
     if (!user.errors) {

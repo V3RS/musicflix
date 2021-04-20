@@ -1,5 +1,6 @@
 from .db import db
 from sqlalchemy.orm import relationship
+from .list import List
 
 
 class MusicVideo(db.Model):
@@ -14,6 +15,10 @@ class MusicVideo(db.Model):
     video_url = db.Column(db.String, nullable=False)
 
     reviews = relationship("Review", back_populates='music_video')
+
+    user = db.relationship(
+        'User', secondary=List, back_populates='music_video', lazy='dynamic'
+    )
 
     def to_dict(self):
 
