@@ -5,6 +5,7 @@ import modalReducer from "./modal";
 import mvReducer from "./mv";
 import mvSearchReducer from "./mvsearch";
 import commentReducer from "./comment";
+import listReducer from "./list";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   mv: mvReducer,
   mvSearch: mvSearchReducer,
   mvComments: commentReducer,
+  userList: listReducer,
 });
 
 let enhancer;

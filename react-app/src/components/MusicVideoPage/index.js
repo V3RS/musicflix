@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ReactPlayer from "react-player/youtube";
 import MVModal from "../MVModal";
 import { openMV, closeMV } from "../../store/modal";
+import { postList, deleteList } from "../../store/list";
 import { setFocusId } from "../../store/mv";
 import "./MusicVideoPage.css";
 
@@ -12,13 +13,24 @@ export default function MusicVideoPage() {
   const [mv, setMV] = useState({});
   const [mute, setMute] = useState(false);
   const [play, setPlay] = useState(true);
+  const [inList, setInList] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
   const mvState = useSelector((state) => state.modal.mvShow);
+  const user = useSelector((state) => state.session.user);
+  const userList = useSelector((state) => state.userList);
 
   const { mvId } = useParams();
+  const addToList = () => dispatch(postList(mvId, user.id));
+  const deleteFromList = () => dispatch(deleteList(mvId, user.id));
   const hover = useRef();
+
+  useEffect(() => {
+    userList.forEach((mv) => {
+      if (`${mv.id}` === mvId) setInList(true);
+    });
+  }, [userList]);
 
   useEffect(() => {
     hover.current && hover.current.classList.add("mv__video__hover");
@@ -104,8 +116,22 @@ export default function MusicVideoPage() {
             >
               <i className="ic fas fa-info-circle"></i>More Info
             </button>
-            <button id="mv__hover__add">
-              <i className="fas fa-plus"></i>
+            <button
+              id="mv__hover__add"
+              onClick={
+                inList
+                  ? () => {
+                      deleteFromList();
+                      setInList(false);
+                    }
+                  : addToList
+              }
+            >
+              {inList ? (
+                <i class="fas fa-minus"></i>
+              ) : (
+                <i className="fas fa-plus"></i>
+              )}
             </button>
             <button id="mv__v__vol" onClick={() => setMute(!mute)}>
               {mute ? (
