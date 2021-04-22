@@ -4,22 +4,38 @@ import { useHistory } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 import ContentSlider from "./ContentSlider";
 import { getMusicVideos, setFocusId } from "../../store/mv";
+import { postList, deleteList } from "../../store/list";
 import "./Browse.css";
 import MVModal from "../MVModal";
 import { openMV } from "../../store/modal";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { prevVideo } from "./prevVideo";
 
 export default function Browse() {
   const [mute, setMute] = useState(true);
   const [num, setNum] = useState(0);
+  const [inList, setInList] = useState(false);
   const [trending, setTrending] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
   const getRandomInt = (max) => Math.floor(Math.random() * max);
 
+  const user = useSelector((state) => state.session.user);
+  const userList = useSelector((state) => state.userList);
+
+  const addToList = () => dispatch(postList(num + 1, user.id));
+  const deleteFromList = () => dispatch(deleteList(num + 1, user.id));
+
+  useEffect(() => {
+    setInList(false);
+    userList.forEach((mv) => {
+      if (mv.id === num + 1) setInList(true);
+    });
+  }, [userList, num]);
+
   useEffect(() => {
     dispatch(getMusicVideos());
-    setNum(getRandomInt(63));
+    setNum(prevVideo[Math.floor(Math.random() * prevVideo.length)]);
   }, [dispatch]);
   // trending
   const mvState = useSelector((state) => state.modal.mvShow);
@@ -45,6 +61,8 @@ export default function Browse() {
         <ReactPlayer
           className="react-player"
           url={all ? all[num]?.video_url : ""}
+          // ids that are full screen , 31, 32, 34, 35, 36,
+          // 38, 39, 41, 48 ,51, 52, 57, 58,
           width="100vw"
           height="108vh"
           playing={mvState ? false : true}
@@ -79,6 +97,23 @@ export default function Browse() {
             >
               <i className="ic fas fa-info-circle"></i>More Info
             </button>
+            <button
+              id="mv__hover__add__browse"
+              onClick={
+                inList
+                  ? () => {
+                      deleteFromList();
+                      setInList(false);
+                    }
+                  : addToList
+              }
+            >
+              {inList ? (
+                <i class="fas fa-minus"></i>
+              ) : (
+                <i className="fas fa-plus"></i>
+              )}
+            </button>
             <button id="prev__v__vol" onClick={() => setMute(!mute)}>
               {mute ? (
                 <i className="fas fa-volume-mute"></i>
@@ -88,7 +123,9 @@ export default function Browse() {
             </button>
             <button
               id="prev__v__shuffle"
-              onClick={() => setNum(getRandomInt(63))}
+              onClick={() =>
+                setNum(prevVideo[Math.floor(Math.random() * prevVideo.length)])
+              }
             >
               <i className="fas fa-random"></i>
             </button>
