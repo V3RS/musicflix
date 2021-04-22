@@ -31,14 +31,16 @@ export default function ContentSlider({ title, mvs }) {
             <VideoSlide mvs={mvs?.slice(14, 21)} />
           </Slide>
         </Slider>
-        <div className="slide_btns">
-          <ButtonBack id="left">
-            <i className="fas fa-angle-left fa-2x"></i>
-          </ButtonBack>
-          <ButtonNext id="right">
-            <i className="fas fa-angle-right fa-2x"></i>
-          </ButtonNext>
-        </div>
+        <span className="slide_btns">
+          <div>
+            <ButtonBack id="left">
+              <i className="fas fa-angle-left fa-2x"></i>
+            </ButtonBack>
+            <ButtonNext id="right">
+              <i className="fas fa-angle-right fa-2x"></i>
+            </ButtonNext>
+          </div>
+        </span>
       </CarouselProvider>
     </div>
   );

@@ -4,4 +4,4 @@ Pipfile
 Pipfile.lock
 .env
 .DS_Store
-imgs/
+imgs/**

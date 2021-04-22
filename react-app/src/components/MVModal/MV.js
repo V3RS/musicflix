@@ -80,7 +80,7 @@ export default function MV() {
   const propic =
     "https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFH0VbIGycnpOMaFT5ER1erOVKsxpCLYnZF0-sxIK15G0mY7z7RnNlEEiRFGOOBCJcyB2CEibnXtHsXwNqmcCGg-XlQ.png?r=9fe";
 
-  return comments ? (
+  return mv ? (
     <div id="modal__mv__c">
       <button className="mv__close__modal" onClick={() => dispatch(closeMV())}>
         <i className="fas fa-times"></i>

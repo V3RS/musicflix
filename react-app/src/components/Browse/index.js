@@ -54,6 +54,15 @@ export default function Browse() {
     setTrending(trend);
   }, [mv.all]);
 
+  // shuffle's the song and adds a transparent class to the top
+  const shuffle = () => {
+    document.querySelector(".nav__container").classList.remove("nav__top__c");
+    setTimeout(() => {
+      document.querySelector(".nav__container").classList.add("nav__top__c");
+    }, 4500);
+    setNum(prevVideo[Math.floor(Math.random() * prevVideo.length)]);
+  };
+
   return all ? (
     <div className="browse__container">
       <MVModal mv={all ? all[num] : {}} />
@@ -61,8 +70,6 @@ export default function Browse() {
         <ReactPlayer
           className="react-player"
           url={all ? all[num]?.video_url : ""}
-          // ids that are full screen , 31, 32, 34, 35, 36,
-          // 38, 39, 41, 48 ,51, 52, 57, 58,
           width="100vw"
           height="108vh"
           playing={mvState ? false : true}
@@ -121,12 +128,7 @@ export default function Browse() {
                 <i className="fas fa-volume-up"></i>
               )}
             </button>
-            <button
-              id="prev__v__shuffle"
-              onClick={() =>
-                setNum(prevVideo[Math.floor(Math.random() * prevVideo.length)])
-              }
-            >
+            <button id="prev__v__shuffle" onClick={shuffle}>
               <i className="fas fa-random"></i>
             </button>
           </div>
