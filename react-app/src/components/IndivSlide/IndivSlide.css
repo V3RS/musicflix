@@ -14,19 +14,20 @@
   border-radius: 4px;
 }
 .hover__c {
-  width: 400px;
-  height: 400px;
-  background-color: #141414;
-  box-shadow: 1px 1px 5px 1px black;
-  border-radius: 4px;
-  position: relative;
+  height: 267px;
+  width: 267px;
+  /* width: 400px;
+  height: 400px; */
+
   bottom: 80px;
+  position: relative;
+  z-index: 10;
 }
 
 .hover__c:hover {
   z-index: 10;
   cursor: pointer;
-  width: 400px;
+  /* width: 400px; */
 }
 
 .album:hover {

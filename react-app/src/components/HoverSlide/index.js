@@ -32,7 +32,7 @@ export default function HoverSlide({ mv, wid }) {
         <ReactPlayer
           className="react-player2"
           url={mv?.video_url}
-          width={wid ? "400px" : "350px"}
+          width={"400px"}
           height="270px"
           playing={true}
           controls={false}
