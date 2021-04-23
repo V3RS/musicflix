@@ -1,8 +1,6 @@
 import React from "react";
 import CommentForm from "../CommentForm";
-
-const propic =
-  "https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFH0VbIGycnpOMaFT5ER1erOVKsxpCLYnZF0-sxIK15G0mY7z7RnNlEEiRFGOOBCJcyB2CEibnXtHsXwNqmcCGg-XlQ.png?r=9fe";
+import { propic, banana } from "./propic";
 
 export default function Comment({
   rev,
@@ -29,7 +27,11 @@ export default function Comment({
       <Avatar
         className="rev__pro"
         variant="square"
-        src={propic}
+        src={
+          rev.user.id === 2
+            ? banana
+            : propic[Math.floor(Math.random() * propic.length)]
+        }
         alt="reviewer pic"
       />
       <div className="rev_un_c">{rev.user.username}</div>
