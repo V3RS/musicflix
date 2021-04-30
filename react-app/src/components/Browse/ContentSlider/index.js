@@ -10,7 +10,7 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import "./ContentSlider.css";
 
 import VideoSlide from "../../VideoSlide";
-
+// push to heroku
 export default function ContentSlider({ title, mvs }) {
   return (
     <div className="whole__slider__c">
