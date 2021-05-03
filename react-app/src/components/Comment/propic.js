@@ -7,5 +7,5 @@ export const propic = [
   "https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFODe-79HMte1GvxsxPzvEhS4oamceVNh3isrrNF3kcraRbsL9uOcrH0MyKtlmWkLJyKJIxId66coocNnpINTOKpTcQ.png?r=f08",
 ];
 
-export const banana =
-  "https://media.istockphoto.com/vectors/banana-smoothie-icon-vector-id1127866548?k=6&m=1127866548&s=612x612&w=0&h=F3G186u9w-fsq-RXlT1vkyV_Ijh0QTPqvWWxMtJLqwk=";
+export const chicken =
+  "https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFH0VbIGycnpOMaFT5ER1erOVKsxpCLYnZF0-sxIK15G0mY7z7RnNlEEiRFGOOBCJcyB2CEibnXtHsXwNqmcCGg-XlQ.png?r=9fe";
