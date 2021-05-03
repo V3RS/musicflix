@@ -1,6 +1,6 @@
 import React from "react";
 import CommentForm from "../CommentForm";
-import { propic, banana } from "./propic";
+import { propic, chicken } from "./propic";
 
 export default function Comment({
   rev,
@@ -28,8 +28,8 @@ export default function Comment({
         className="rev__pro"
         variant="square"
         src={
-          rev.user.id === 2
-            ? banana
+          rev.user.id === 1
+            ? chicken
             : propic[Math.floor(Math.random() * propic.length)]
         }
         alt="reviewer pic"
